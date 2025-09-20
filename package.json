@@ -4,9 +4,15 @@
   "description": "Template de librairie en ligne avec TailwindCSS",
   "main": "index.html",
   "scripts": {
-    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "build-css": "npm run build-input && npm run build-style",
+    "build-input": "tailwindcss -i ./src/input.css -o ./dist/input.css --watch",
+    "build-style": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "dev": "npm run dev-input & npm run dev-style",
+    "dev-input": "npx tailwindcss -i ./src/input.css -o ./dist/input.css --watch",
+    "dev-style": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "build": "npm run build-input-prod && npm run build-style-prod",
+    "build-input-prod": "tailwindcss -i ./src/input.css -o ./dist/input.css --minify",
+    "build-style-prod": "tailwindcss -i ./src/style.css -o ./dist/style.css --minify"
   },
   "keywords": [
     "tailwindcss",

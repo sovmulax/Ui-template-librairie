@@ -116,4 +116,33 @@
   .table-head-2 {
     @apply text-table-head-2 font-sora text-dark-500 uppercase tracking-wider;
   }
+
+  /* Custom Utilities */
+  .container {
+    @apply mx-auto px-4;
+  }
+
+  /* Responsive spacing utilities */
+  .py-15 {
+    @apply py-16;
+  }
+
+  .w-15 {
+    @apply w-16;
+  }
+
+  .h-15 {
+    @apply h-16;
+  }
+}
+
+/* Custom animations and transitions */
+@layer utilities {
+  .transition-colors {
+    @apply transition-colors duration-200;
+  }
+  
+  .transition-all {
+    @apply transition-all duration-200;
+  }
 }
