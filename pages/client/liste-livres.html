@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Livres - BookStore</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sora bg-dark-50">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <div class="contact-info">
+                    <span>
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +(84) - 1800 - 4635
+                    </span>
+                    <span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        info@BookStore.com
+                    </span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="social-icon">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header border-b border-dark-200">
+        <div class="container mx-auto px-5 max-w-7xl py-5">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="book-open" class="w-8 h-8"></i>
+                    </div>
+                    <span class="text-h3 logo-text">BookStore</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Rechercher des livres..." class="search-input">
+                        <select class="search-select">
+                            <option>Toutes catégories</option>
+                            <option>Fiction</option>
+                            <option>Non-Fiction</option>
+                            <option>Science</option>
+                            <option>Histoire</option>
+                            <option>Biographie</option>
+                        </select>
+                        <button class="search-btn">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="header-actions">
+                    <button class="store-locator">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        Trouver une librairie
+                    </button>
+                    <div class="user-actions">
+                        <button class="user-btn">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </button>
+                        <button class="wishlist-btn">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </button>
+                        <button class="cart-btn">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span class="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="container mx-auto px-5 max-w-7xl py-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <button class="categories-btn">
+                            <i data-lucide="grid-3x3" class="w-5 h-5"></i>
+                            Catégories
+                        </button>
+                        <ul class="nav-links">
+                            <li><a href="../../index.html" class="nav-link">Accueil</a></li>
+                            <li><a href="liste-livres.html" class="nav-link active">Livres</a></li>
+                            <li><a href="blog.html" class="nav-link">Blog</a></li>
+                            <li><a href="#" class="nav-link">Contact</a></li>
+                            <li><a href="#" class="nav-link">À propos</a></li>
+                        </ul>
+                    </div>
+                    <div class="support-info">
+                        <div class="support-phone">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            +1 840 - 841 25 69
+                        </div>
+                        <div class="support-text">Centre de support 24/7</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-5 max-w-7xl py-8">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb mb-6">
+            <ol class="flex items-center space-x-2 text-p4 text-dark-500">
+                <li><a href="../../index.html" class="hover:text-primary-500">Accueil</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                <li class="text-dark-900">Livres</li>
+            </ol>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-h2 text-dark-900 mb-2">Catalogue des livres</h1>
+                <p class="text-p3 text-dark-500">Découvrez notre collection de livres</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-p4 text-dark-500">1,247 livres trouvés</span>
+                <select class="input-md bg-white border border-dark-200">
+                    <option>Trier par popularité</option>
+                    <option>Prix croissant</option>
+                    <option>Prix décroissant</option>
+                    <option>Nouveautés</option>
+                    <option>Mieux notés</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex gap-8">
+            <!-- Sidebar Filters -->
+            <aside class="w-80 space-y-6">
+                <!-- Categories Filter -->
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-h5 text-dark-900 mb-4">Catégories</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center justify-between cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="checkbox" class="mr-3">
+                                <span class="text-p3">Fiction</span>
+                            </div>
+                            <span class="text-p5 text-dark-500">(324)</span>
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="checkbox" class="mr-3">
+                                <span class="text-p3">Non-Fiction</span>
+                            </div>
+                            <span class="text-p5 text-dark-500">(198)</span>
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="checkbox" class="mr-3">
+                                <span class="text-p3">Science</span>
+                            </div>
+                            <span class="text-p5 text-dark-500">(156)</span>
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="checkbox" class="mr-3">
+                                <span class="text-p3">Histoire</span>
+                            </div>
+                            <span class="text-p5 text-dark-500">(89)</span>
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer">
+                            <div class="flex items-center">
+                                <input type="checkbox" class="mr-3">
+                                <span class="text-p3">Biographie</span>
+                            </div>
+                            <span class="text-p5 text-dark-500">(67)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-h5 text-dark-900 mb-4">Prix</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="price" class="mr-3">
+                            <span class="text-p3">Moins de 10€</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="price" class="mr-3">
+                            <span class="text-p3">10€ - 20€</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="price" class="mr-3">
+                            <span class="text-p3">20€ - 50€</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="price" class="mr-3">
+                            <span class="text-p3">Plus de 50€</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Rating Filter -->
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-h5 text-dark-900 mb-4">Notation</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="mr-3">
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="text-p3">5 étoiles</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="mr-3">
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-p3">4 étoiles et +</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="mr-3">
+                            <div class="flex items-center">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4"></i>
+                                    <i data-lucide="star" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-p3">3 étoiles et +</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Authors Filter -->
+                <div class="bg-white rounded-lg p-6">
+                    <h3 class="text-h5 text-dark-900 mb-4">Auteurs populaires</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="mr-3">
+                            <span class="text-p3">Stephen King</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="mr-3">
+                            <span class="text-p3">J.K. Rowling</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="mr-3">
+                            <span class="text-p3">Agatha Christie</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" class="mr-3">
+                            <span class="text-p3">Dan Brown</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Books Grid -->
+            <div class="flex-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Book Card 1 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="https://via.placeholder.com/300x400?text=Livre+1" alt="Couverture du livre" class="w-full h-64 object-cover">
+                            <button class="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50">
+                                <i data-lucide="heart" class="w-5 h-5 text-dark-500 hover:text-red-500"></i>
+                            </button>
+                            <span class="absolute top-3 left-3 bg-green-500 text-white px-2 py-1 text-p5 rounded">Nouveau</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-h6 text-dark-900 mb-2 line-clamp-2">Le Mystère de la Chambre Jaune</h3>
+                            <p class="text-p4 text-dark-500 mb-2">Gaston Leroux</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-p5 text-dark-500">(124 avis)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-h6 text-primary-500">15,99€</span>
+                                    <span class="text-p5 text-dark-500 line-through">19,99€</span>
+                                </div>
+                                <button class="btn-sm btn-primary">
+                                    <i data-lucide="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                    Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 2 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="https://via.placeholder.com/300x400?text=Livre+2" alt="Couverture du livre" class="w-full h-64 object-cover">
+                            <button class="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50">
+                                <i data-lucide="heart" class="w-5 h-5 text-dark-500 hover:text-red-500"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-h6 text-dark-900 mb-2 line-clamp-2">1984</h3>
+                            <p class="text-p4 text-dark-500 mb-2">George Orwell</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="text-p5 text-dark-500">(89 avis)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-h6 text-primary-500">12,99€</span>
+                                <button class="btn-sm btn-primary">
+                                    <i data-lucide="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                    Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 3 -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="https://via.placeholder.com/300x400?text=Livre+3" alt="Couverture du livre" class="w-full h-64 object-cover">
+                            <button class="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50">
+                                <i data-lucide="heart" class="w-5 h-5 text-red-500"></i>
+                            </button>
+                            <span class="absolute top-3 left-3 bg-red-500 text-white px-2 py-1 text-p5 rounded">-25%</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-h6 text-dark-900 mb-2 line-clamp-2">L'Étranger</h3>
+                            <p class="text-p4 text-dark-500 mb-2">Albert Camus</p>
+                            <div class="flex items-center mb-3">
+                                <div class="flex text-yellow-400 mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4"></i>
+                                </div>
+                                <span class="text-p5 text-dark-500">(156 avis)</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-h6 text-primary-500">9,99€</span>
+                                    <span class="text-p5 text-dark-500 line-through">13,99€</span>
+                                </div>
+                                <button class="btn-sm btn-primary">
+                                    <i data-lucide="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                    Ajouter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more book cards here... -->
+                    <!-- For brevity, showing 3 cards. In reality, you'd have more books -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex items-center justify-center mt-12">
+                    <nav class="flex items-center space-x-2">
+                        <button class="p-2 rounded-lg border border-dark-200 hover:bg-primary-50">
+                            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                        </button>
+                        <button class="px-4 py-2 rounded-lg bg-primary-500 text-white">1</button>
+                        <button class="px-4 py-2 rounded-lg border border-dark-200 hover:bg-primary-50">2</button>
+                        <button class="px-4 py-2 rounded-lg border border-dark-200 hover:bg-primary-50">3</button>
+                        <button class="px-4 py-2 rounded-lg border border-dark-200 hover:bg-primary-50">...</button>
+                        <button class="px-4 py-2 rounded-lg border border-dark-200 hover:bg-primary-50">10</button>
+                        <button class="p-2 rounded-lg border border-dark-200 hover:bg-primary-50">
+                            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="logo mb-5">
+                        <div class="logo-icon">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-h4 logo-text">BookStore</span>
+                    </div>
+                    <p class="company-description">
+                        Trouvez une librairie près de chez vous.<br>
+                        Voir nos magasins
+                    </p>
+                    <div class="contact-info space-y-2">
+                        <p class="phone">+(84) - 1800 - 4635</p>
+                        <p class="email">hello@BookStore.com</p>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Informations de contact</h4>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-p3 text-dark-500 leading-relaxed">927 Phoenix Bldg., Quezon</p>
+                            <p class="text-p3 text-dark-500 leading-relaxed">Ave., Quezon City</p>
+                        </div>
+                        <div>
+                            <p class="text-p3 text-dark-500 leading-relaxed">Lundi - Vendredi: 9:00-20:00</p>
+                            <p class="text-p3 text-dark-500 leading-relaxed">Samedi: 11:00 - 15:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explore -->
+                <div class="footer-section">
+                    <h4>Explorer</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Catégories</a></li>
+                        <li><a href="#">Produits</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe -->
+                <div class="footer-section">
+                    <h4>S'abonner</h4>
+                    <p class="subscribe-text">
+                        Entrez votre email pour être le premier informé des nouvelles collections et lancements de produits.
+                    </p>
+                    <div class="flex rounded-full overflow-hidden bg-dark-50">
+                        <input type="email" placeholder="Adresse email" class="flex-1 px-5 py-3 text-p4 border-none outline-none bg-transparent">
+                        <button class="bg-primary-500 text-white px-6 py-3 text-p4 font-semibold hover:bg-primary-500/90 transition-colors">
+                            S'abonner
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">VISA</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">MC</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">AMEX</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">GPAY</div>
+                </div>
+                <p class="copyright">Copyright © 2023 BookStore. Tous droits réservés</p>
+                <div class="social-links">
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
