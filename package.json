@@ -1,0 +1,20 @@
+{
+  "name": "ui-template-librairie",
+  "version": "1.0.0",
+  "description": "Template de librairie en ligne avec TailwindCSS et DaisyUI",
+  "main": "index.html",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "keywords": ["tailwindcss", "daisyui", "librairie", "template"],
+  "author": "Votre nom",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "daisyui": "^4.4.19",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  }
+}
