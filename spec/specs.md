@@ -51,3 +51,34 @@
 - Tailwind css
 - DaisyUI
 - Post CSS
+
+## Liste des pages
+
+- Client
+  - Inscription
+  - Connexion
+  - Mot de passe oublié
+  - Réinitialisation du mot de passe
+  - Page d'acceuil (Compte de visiteur, compteur de j'aime, banner, liste des livres populaire, liste des livre mieux noté, liste des articles du blog)
+  - Page de liste des livres (avec filtre par catégorie, auteur, boutique, prix, popularité)
+  - Page de détail d'un livre
+  - Page de liste des articles du blog
+  - Page de détail d'un article du blog
+  - Page de gestion du panier
+  - Page de profil client
+  - Page de profil boutique (Liste des livre de la boutique)
+- Dashbord Admin et Boutique
+  - Page de profil boutique (Liste des livre de la boutique)
+  - Page d'ajout d'un livre
+  - Page de modification d'un livre
+  - Page de gestion de la trésorerie
+  - Page d'historique des ventes
+  - Page de gestion du blog (Liste des articles)
+  - Page d'ajout d'un article
+  - Page de modification d'un article
+  - Page de gestion des catégories
+  - Page de validation des comptes boutiques
+  - Page de validation des livres
+  - Page de gestion des images banners
+  - Page de gestion de la trésorerie par boutiques
+  - Page de profil (informations du compte, changement de mot de passe)
