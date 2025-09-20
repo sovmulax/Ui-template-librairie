@@ -345,11 +345,11 @@
 
 /* Custom animations and transitions */
 @layer utilities {
-  .transition-colors {
+  .transition-colors-custom {
     @apply transition-colors duration-200;
   }
   
-  .transition-all {
+  .transition-all-custom {
     @apply transition-all duration-200;
   }
 }
