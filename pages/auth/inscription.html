@@ -6,78 +6,127 @@
     <title>Inscription - BookStore</title>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link href="../../dist/output.css" rel="stylesheet">
+    <link href="../../src/auth.css" rel="stylesheet">
 </head>
 <body class="font-sora bg-dark-50">
-    <!-- Main Content -->
-    <main class="py-10 min-h-screen"
-                        <li><a href="blog.html" class="nav-link">Blog</a></li>
-                        <li><a href="#" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Header Actions -->
-                <div class="header-actions">
-                    <div class="user-actions">
-                        <button class="user-btn">
-                            <i data-lucide="user" class="w-5 h-5"></i>
-                        </button>
-                        <button class="wishlist-btn">
-                            <i data-lucide="heart" class="w-5 h-5"></i>
-                        </button>
-                        <button class="cart-btn">
-                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                            <span class="cart-count">0</span>
-                        </button>
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-sm border-b border-dark-100 sticky top-0 z-50">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex items-center justify-between h-16">
+                <a href="../../index.html" class="flex items-center gap-3 text-dark-900 hover:text-primary-500 transition-colors">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    <span class="text-p3 font-medium">Retour à l'accueil</span>
+                </a>
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                        <i data-lucide="book-open" class="w-4 h-4 text-primary-600"></i>
                     </div>
+                    <span class="text-p2 font-semibold text-dark-900">BookStore</span>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Main Content -->
     <main class="py-10 min-h-screen">
         <div class="container mx-auto px-5 max-w-md">
-            <div class="bg-white rounded-2xl shadow-lg p-8">
+            <div class="bg-white rounded-2xl shadow-lg p-8 fade-in">
                 <div class="text-center mb-8">
-                    <h1 class="text-h2 text-dark-900 mb-2">Créer un compte</h1>
+                    <h3 class="text-h3 text-dark-900 mb-2">Créer un compte</h3>
                     <p class="text-p3 text-dark-500">Rejoignez notre communauté de lecteurs</p>
                 </div>
 
-                <form class="space-y-6">
+                <form class="space-y-6" id="registerForm">
                     <div class="grid grid-cols-2 gap-4">
-                        <div>
+                        <div class="input-group">
                             <label class="block text-p4 text-dark-700 mb-2">Prénom *</label>
-                            <input type="text" class="input-md w-full" placeholder="Votre prénom" required>
+                            <div class="relative">
+                                <i data-lucide="user" class="input-icon w-4 h-4"></i>
+                                <input type="text" id="firstname" class="input-md w-full input-with-icon" 
+                                       placeholder="Votre prénom" required autocomplete="given-name">
+                            </div>
+                            <div class="error-message" id="firstname-error" style="display: none;">
+                                <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                                <span></span>
+                            </div>
                         </div>
-                        <div>
+                        <div class="input-group">
                             <label class="block text-p4 text-dark-700 mb-2">Nom *</label>
-                            <input type="text" class="input-md w-full" placeholder="Votre nom" required>
+                            <div class="relative">
+                                <i data-lucide="user" class="input-icon w-4 h-4"></i>
+                                <input type="text" id="lastname" class="input-md w-full input-with-icon" 
+                                       placeholder="Votre nom" required autocomplete="family-name">
+                            </div>
+                            <div class="error-message" id="lastname-error" style="display: none;">
+                                <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                                <span></span>
+                            </div>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="input-group">
                         <label class="block text-p4 text-dark-700 mb-2">Email *</label>
-                        <input type="email" class="input-md w-full" placeholder="votre@email.com" required>
+                        <div class="relative">
+                            <i data-lucide="mail" class="input-icon w-4 h-4"></i>
+                            <input type="email" id="email" class="input-md w-full input-with-icon" 
+                                   placeholder="votre@email.com" required autocomplete="email">
+                        </div>
+                        <div class="error-message" id="email-error" style="display: none;">
+                            <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                            <span></span>
+                        </div>
                     </div>
 
-                    <div>
+                    <div class="input-group">
                         <label class="block text-p4 text-dark-700 mb-2">Numéro de téléphone</label>
-                        <input type="tel" class="input-md w-full" placeholder="+33 1 23 45 67 89">
+                        <div class="relative">
+                            <i data-lucide="phone" class="input-icon w-4 h-4"></i>
+                            <input type="tel" id="phone" class="input-md w-full input-with-icon" 
+                                   placeholder="+33 1 23 45 67 89" autocomplete="tel">
+                        </div>
+                        <div class="error-message" id="phone-error" style="display: none;">
+                            <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                            <span></span>
+                        </div>
                     </div>
 
-                    <div>
+                    <div class="input-group">
                         <label class="block text-p4 text-dark-700 mb-2">Mot de passe *</label>
-                        <input type="password" class="input-md w-full" placeholder="Minimum 8 caractères" required>
+                        <div class="relative">
+                            <i data-lucide="lock" class="input-icon w-4 h-4"></i>
+                            <input type="password" id="password" class="input-md w-full input-with-icon" 
+                                   placeholder="Minimum 8 caractères" required autocomplete="new-password">
+                            <i data-lucide="eye" class="password-toggle w-4 h-4" id="togglePassword"></i>
+                        </div>
+                        <div class="password-strength" id="password-strength" style="display: none;">
+                            <div class="password-strength-bar">
+                                <div class="password-strength-fill" id="strength-fill"></div>
+                            </div>
+                            <span class="text-p5" id="strength-text">Force du mot de passe</span>
+                        </div>
+                        <div class="error-message" id="password-error" style="display: none;">
+                            <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                            <span></span>
+                        </div>
                     </div>
 
-                    <div>
+                    <div class="input-group">
                         <label class="block text-p4 text-dark-700 mb-2">Confirmer le mot de passe *</label>
-                        <input type="password" class="input-md w-full" placeholder="Confirmez votre mot de passe" required>
+                        <div class="relative">
+                            <i data-lucide="lock" class="input-icon w-4 h-4"></i>
+                            <input type="password" id="confirmPassword" class="input-md w-full input-with-icon" 
+                                   placeholder="Confirmez votre mot de passe" required autocomplete="new-password">
+                            <i data-lucide="eye" class="password-toggle w-4 h-4" id="toggleConfirmPassword"></i>
+                        </div>
+                        <div class="error-message" id="confirmPassword-error" style="display: none;">
+                            <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                            <span></span>
+                        </div>
                     </div>
 
                     <div class="space-y-3">
                         <label class="flex items-start gap-3">
-                            <input type="checkbox" class="mt-1" required>
+                            <input type="checkbox" id="terms" class="mt-1" required>
                             <span class="text-p4 text-dark-600">
                                 J'accepte les <a href="#" class="text-primary-500 hover:underline">conditions d'utilisation</a> 
                                 et la <a href="#" class="text-primary-500 hover:underline">politique de confidentialité</a>
@@ -85,16 +134,21 @@
                         </label>
 
                         <label class="flex items-start gap-3">
-                            <input type="checkbox" class="mt-1">
+                            <input type="checkbox" id="newsletter" class="mt-1">
                             <span class="text-p4 text-dark-600">
                                 Je souhaite recevoir les newsletters et offres spéciales
                             </span>
                         </label>
                     </div>
 
-                    <button type="submit" class="btn-lg btn-primary w-full">
-                        <i data-lucide="user-plus" class="w-5 h-5"></i>
-                        Créer mon compte
+                    <button type="submit" class="btn-lg btn-primary w-full btn-loading" id="registerBtn">
+                        <div class="spinner">
+                            <i data-lucide="loader-2" class="w-5 h-5"></i>
+                        </div>
+                        <span class="btn-text flex items-center justify-center gap-2">
+                            <i data-lucide="user-plus" class="w-5 h-5"></i>
+                            Créer mon compte
+                        </span>
                     </button>
                 </form>
 
@@ -104,35 +158,234 @@
                         <a href="connexion.html" class="text-primary-500 hover:underline font-medium">Se connecter</a>
                     </p>
                 </div>
-
-                <!-- Social Login -->
-                <div class="mt-8">
-                    <div class="relative">
-                        <div class="absolute inset-0 flex items-center">
-                            <div class="w-full border-t border-dark-200"></div>
-                        </div>
-                        <div class="relative flex justify-center text-sm">
-                            <span class="px-2 bg-white text-dark-500">Ou continuer avec</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 grid grid-cols-2 gap-3">
-                        <button class="btn-md btn-outline-primary w-full">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                            Google
-                        </button>
-                        <button class="btn-md btn-outline-primary w-full">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                            Facebook
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
 
     <script>
         lucide.createIcons();
+
+        // Notification system
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <i data-lucide="${type === 'success' ? 'check-circle' : 'alert-circle'}" class="w-4 h-4"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            lucide.createIcons();
+            
+            setTimeout(() => notification.classList.add('show'), 100);
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Password strength checker
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            const strengthText = ['Très faible', 'Faible', 'Moyen', 'Fort', 'Très fort'];
+            const strengthClass = ['strength-weak', 'strength-weak', 'strength-fair', 'strength-good', 'strength-strong'];
+            
+            return {
+                score: strength,
+                text: strengthText[Math.min(strength, 4)],
+                class: strengthClass[Math.min(strength, 4)]
+            };
+        }
+
+        // Validation des champs
+        function validateField(field, value) {
+            const errorElement = document.getElementById(`${field}-error`);
+            const inputElement = document.getElementById(field);
+            
+            let isValid = true;
+            let errorMessage = '';
+
+            switch (field) {
+                case 'firstname':
+                case 'lastname':
+                    if (!value.trim()) {
+                        errorMessage = 'Ce champ est requis';
+                        isValid = false;
+                    } else if (value.trim().length < 2) {
+                        errorMessage = 'Minimum 2 caractères';
+                        isValid = false;
+                    }
+                    break;
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!value) {
+                        errorMessage = 'L\'email est requis';
+                        isValid = false;
+                    } else if (!emailRegex.test(value)) {
+                        errorMessage = 'Format d\'email invalide';
+                        isValid = false;
+                    }
+                    break;
+                case 'phone':
+                    if (value && !/^[\d\s\+\-\(\)]+$/.test(value)) {
+                        errorMessage = 'Format de téléphone invalide';
+                        isValid = false;
+                    }
+                    break;
+                case 'password':
+                    if (!value) {
+                        errorMessage = 'Le mot de passe est requis';
+                        isValid = false;
+                    } else if (value.length < 8) {
+                        errorMessage = 'Le mot de passe doit contenir au moins 8 caractères';
+                        isValid = false;
+                    }
+                    break;
+                case 'confirmPassword':
+                    const password = document.getElementById('password').value;
+                    if (!value) {
+                        errorMessage = 'Veuillez confirmer votre mot de passe';
+                        isValid = false;
+                    } else if (value !== password) {
+                        errorMessage = 'Les mots de passe ne correspondent pas';
+                        isValid = false;
+                    }
+                    break;
+            }
+
+            if (isValid) {
+                inputElement.classList.remove('input-error');
+                inputElement.classList.add('input-success');
+                errorElement.style.display = 'none';
+            } else {
+                inputElement.classList.remove('input-success');
+                inputElement.classList.add('input-error');
+                errorElement.querySelector('span').textContent = errorMessage;
+                errorElement.style.display = 'flex';
+            }
+
+            return isValid;
+        }
+
+        // Toggle password visibility
+        ['togglePassword', 'toggleConfirmPassword'].forEach(toggleId => {
+            document.getElementById(toggleId).addEventListener('click', function() {
+                const inputId = toggleId === 'togglePassword' ? 'password' : 'confirmPassword';
+                const passwordInput = document.getElementById(inputId);
+                const icon = this;
+                
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    icon.setAttribute('data-lucide', 'eye-off');
+                } else {
+                    passwordInput.type = 'password';
+                    icon.setAttribute('data-lucide', 'eye');
+                }
+                lucide.createIcons();
+            });
+        });
+
+        // Password strength indicator
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthElement = document.getElementById('password-strength');
+            const strengthFill = document.getElementById('strength-fill');
+            const strengthText = document.getElementById('strength-text');
+
+            if (password.length > 0) {
+                strengthElement.style.display = 'block';
+                const strength = checkPasswordStrength(password);
+                
+                strengthFill.className = `password-strength-fill ${strength.class}`;
+                strengthText.textContent = strength.text;
+                strengthText.className = `text-p5 ${strength.score < 3 ? 'text-red-500' : strength.score < 4 ? 'text-yellow-500' : 'text-green-500'}`;
+            } else {
+                strengthElement.style.display = 'none';
+            }
+        });
+
+        // Form validation en temps réel
+        ['firstname', 'lastname', 'email', 'phone', 'password', 'confirmPassword'].forEach(field => {
+            const input = document.getElementById(field);
+            input.addEventListener('blur', (e) => {
+                validateField(field, e.target.value);
+            });
+            
+            input.addEventListener('input', (e) => {
+                if (input.classList.contains('input-error')) {
+                    validateField(field, e.target.value);
+                }
+                // Re-valider la confirmation du mot de passe si le mot de passe change
+                if (field === 'password') {
+                    const confirmPasswordInput = document.getElementById('confirmPassword');
+                    if (confirmPasswordInput.value) {
+                        validateField('confirmPassword', confirmPasswordInput.value);
+                    }
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                firstname: document.getElementById('firstname').value,
+                lastname: document.getElementById('lastname').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: document.getElementById('password').value,
+                confirmPassword: document.getElementById('confirmPassword').value,
+                terms: document.getElementById('terms').checked,
+                newsletter: document.getElementById('newsletter').checked
+            };
+            
+            const registerBtn = document.getElementById('registerBtn');
+            
+            // Validation
+            const validations = [
+                validateField('firstname', formData.firstname),
+                validateField('lastname', formData.lastname),
+                validateField('email', formData.email),
+                validateField('phone', formData.phone),
+                validateField('password', formData.password),
+                validateField('confirmPassword', formData.confirmPassword)
+            ];
+            
+            if (!formData.terms) {
+                showNotification('Vous devez accepter les conditions d\'utilisation', 'error');
+                return;
+            }
+            
+            if (!validations.every(v => v)) {
+                showNotification('Veuillez corriger les erreurs dans le formulaire', 'error');
+                return;
+            }
+            
+            // Loading state
+            registerBtn.classList.add('loading');
+            
+            try {
+                // Simulation d'une requête API
+                await new Promise(resolve => setTimeout(resolve, 2500));
+                
+                showNotification('Compte créé avec succès ! Redirection...', 'success');
+                setTimeout(() => {
+                    window.location.href = 'connexion.html';
+                }, 1500);
+            } catch (error) {
+                showNotification('Erreur lors de la création du compte', 'error');
+            } finally {
+                registerBtn.classList.remove('loading');
+            }
+        });
     </script>
 </body>
 </html>

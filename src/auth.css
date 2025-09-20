@@ -1,0 +1,225 @@
+/* Styles pour les pages d'authentification */
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Input avec icônes */
+.input-group {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6B7280;
+    z-index: 10;
+}
+
+.input-with-icon {
+    padding-left: 40px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6B7280;
+    z-index: 10;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #374151;
+}
+
+/* Boutons avec état de chargement */
+.btn-loading {
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.btn-loading .spinner {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-loading.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-loading.loading .spinner {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+.btn-loading.loading .btn-text {
+    opacity: 0;
+}
+
+/* Validation des champs */
+.input-error {
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.input-success {
+    border-color: #10B981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.error-message {
+    color: #EF4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.success-message {
+    color: #10B981;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Force du mot de passe */
+.password-strength {
+    margin-top: 0.5rem;
+}
+
+.password-strength-bar {
+    height: 4px;
+    background-color: #E5E7EB;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.password-strength-fill {
+    height: 100%;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-weak { 
+    background-color: #EF4444; 
+    width: 25%; 
+}
+
+.strength-fair { 
+    background-color: #F59E0B; 
+    width: 50%; 
+}
+
+.strength-good { 
+    background-color: #3B82F6; 
+    width: 75%; 
+}
+
+.strength-strong { 
+    background-color: #10B981; 
+    width: 100%; 
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-success {
+    background-color: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    color: #166534;
+}
+
+.notification-error {
+    background-color: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #991B1B;
+}
+
+/* Responsive améliorations */
+@media (max-width: 640px) {
+    .fade-in {
+        animation: fadeInMobile 0.4s ease-out;
+    }
+    
+    @keyframes fadeInMobile {
+        from { 
+            opacity: 0; 
+            transform: translateY(10px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+}
+
+/* Focus amélioré pour l'accessibilité */
+.input-md:focus,
+.btn-lg:focus,
+.btn-md:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Transitions douces */
+.input-md,
+.btn-lg,
+.btn-md {
+    transition: all 0.2s ease;
+}
+
+/* Hover effects */
+.btn-lg:hover:not(:disabled),
+.btn-md:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-lg:active,
+.btn-md:active {
+    transform: translateY(0);
+}
