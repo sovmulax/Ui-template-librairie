@@ -425,4 +425,59 @@
       @apply grid-cols-2;
     }
   }
+
+  /* Banner Slider Components */
+  .banner-slide {
+    @apply hidden opacity-0 transition-opacity duration-500 ease-in-out;
+  }
+  
+  .banner-slide.active {
+    @apply block opacity-100;
+  }
+  
+  .banner-control {
+    @apply text-sm font-medium transition-all duration-300;
+  }
+  
+  .banner-control.active {
+    @apply bg-white/40 border-white/60 font-semibold;
+  }
+  
+  .banner-control:hover {
+    @apply bg-white/30 transform -translate-y-0.5;
+  }
+
+  .banner-slide {
+    @apply hidden opacity-0 transition-opacity duration-500 ease-in-out;
+  }
+  
+  .banner-slide.active {
+    @apply block opacity-100;
+  }
+  
+  /* Banner Navigation Arrows */
+  .banner-arrow {
+    @apply transition-all duration-300 shadow-lg;
+  }
+  
+  .banner-arrow:hover {
+    @apply bg-white/40 transform scale-110 shadow-xl;
+  }
+  
+  .banner-arrow:active {
+    @apply transform scale-95;
+  }
+  
+  /* Banner Indicators */
+  .banner-indicator {
+    @apply transition-all duration-300 shadow-sm;
+  }
+  
+  .banner-indicator.active {
+    @apply bg-white/60 transform scale-125 shadow-md;
+  }
+  
+  .banner-indicator:hover {
+    @apply transform scale-110;
+  }
 }
