@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Boutique - Ajouter un livre</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../../dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sora bg-dark-50">
+    <!-- Sidebar -->
+    <div class="flex h-screen">
+        <aside class="w-64 bg-dark-900 text-dark-50 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-dark-700">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                        <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="text-h5 font-semibold">BookStore</span>
+                </div>
+                <p class="text-p5 text-dark-300 mt-1">Dashboard Boutique</p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="home" class="w-5 h-5"></i>
+                            <span class="text-p3">Tableau de bord</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestion-livres.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="book" class="w-5 h-5"></i>
+                            <span class="text-p3">Mes livres</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ajouter-livre.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-500 text-white">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                            <span class="text-p3 font-medium">Ajouter un livre</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="commandes.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            <span class="text-p3">Commandes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tresorerie.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+                            <span class="text-p3">Trésorerie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="historique-ventes.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                            <span class="text-p3">Historique des ventes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="blog-gestion.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="edit" class="w-5 h-5"></i>
+                            <span class="text-p3">Blog</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profil.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                            <span class="text-p3">Profil</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Info -->
+            <div class="p-4 border-t border-dark-700">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
+                        <span class="text-p3 font-semibold text-white">LB</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-p4 font-medium text-white">Librairie Bouquiniste</p>
+                        <p class="text-p5 text-dark-300">librairie@exemple.fr</p>
+                    </div>
+                    <button class="p-2 hover:bg-dark-800 rounded-lg">
+                        <i data-lucide="log-out" class="w-4 h-4 text-dark-300"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Navigation -->
+            <header class="bg-white border-b border-dark-200 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-h3 text-dark-900 font-semibold">Ajouter un livre</h1>
+                        <p class="text-p3 text-dark-500">Créez une nouvelle fiche produit pour votre livre</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="p-2 hover:bg-dark-100 rounded-lg relative">
+                            <i data-lucide="bell" class="w-5 h-5 text-dark-500"></i>
+                            <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
+                        </button>
+                        <a href="../../../index.html" class="btn-sm btn-outline-primary">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            Voir le site
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="flex-1 overflow-auto p-6">
+                <form class="max-w-4xl space-y-8">
+                    <!-- Basic Information -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h2 class="text-h4 text-dark-900 mb-6">Informations générales</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="title">Titre du livre *</label>
+                                <input type="text" id="title" name="title" class="input-lg w-full" placeholder="Le titre de votre livre" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="author">Auteur *</label>
+                                <input type="text" id="author" name="author" class="input-lg w-full" placeholder="Nom de l'auteur" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="isbn">ISBN</label>
+                                <input type="text" id="isbn" name="isbn" class="input-lg w-full" placeholder="978-2-253-00421-2">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="category">Catégorie *</label>
+                                <select id="category" name="category" class="input-lg w-full" required>
+                                    <option value="">Sélectionner une catégorie</option>
+                                    <option value="fiction">Fiction</option>
+                                    <option value="non-fiction">Non-Fiction</option>
+                                    <option value="science">Science</option>
+                                    <option value="histoire">Histoire</option>
+                                    <option value="biographie">Biographie</option>
+                                    <option value="jeunesse">Jeunesse</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="publisher">Éditeur</label>
+                                <input type="text" id="publisher" name="publisher" class="input-lg w-full" placeholder="Nom de l'éditeur">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="publication_date">Date de publication</label>
+                                <input type="date" id="publication_date" name="publication_date" class="input-lg w-full">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="pages">Nombre de pages</label>
+                                <input type="number" id="pages" name="pages" class="input-lg w-full" placeholder="312">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="language">Langue</label>
+                                <select id="language" name="language" class="input-lg w-full">
+                                    <option value="fr">Français</option>
+                                    <option value="en">Anglais</option>
+                                    <option value="es">Espagnol</option>
+                                    <option value="de">Allemand</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h2 class="text-h4 text-dark-900 mb-6">Description</h2>
+                        
+                        <div>
+                            <label class="block text-p4 text-dark-700 mb-2" for="description">Description du livre *</label>
+                            <textarea id="description" name="description" rows="6" class="input-lg w-full resize-none" placeholder="Décrivez votre livre en détail..." required></textarea>
+                            <p class="text-p5 text-dark-500 mt-2">Minimum 100 caractères recommandés</p>
+                        </div>
+                    </div>
+
+                    <!-- Images -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h2 class="text-h4 text-dark-900 mb-6">Images du livre</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Image principale -->
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-3">Image principale *</label>
+                                <div class="border-2 border-dashed border-dark-300 rounded-lg p-6 text-center hover:border-primary-500 transition-colors cursor-pointer" onclick="document.getElementById('main-image').click()">
+                                    <i data-lucide="upload" class="w-8 h-8 text-dark-400 mx-auto mb-3"></i>
+                                    <p class="text-p4 text-dark-600 mb-1">Cliquez pour télécharger</p>
+                                    <p class="text-p5 text-dark-500">PNG, JPG jusqu'à 5MB</p>
+                                    <input type="file" id="main-image" name="main_image" accept="image/*" class="hidden" required>
+                                </div>
+                            </div>
+                            
+                            <!-- Image 2 -->
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-3">Image secondaire</label>
+                                <div class="border-2 border-dashed border-dark-300 rounded-lg p-6 text-center hover:border-primary-500 transition-colors cursor-pointer" onclick="document.getElementById('second-image').click()">
+                                    <i data-lucide="upload" class="w-8 h-8 text-dark-400 mx-auto mb-3"></i>
+                                    <p class="text-p4 text-dark-600 mb-1">Cliquez pour télécharger</p>
+                                    <p class="text-p5 text-dark-500">PNG, JPG jusqu'à 5MB</p>
+                                    <input type="file" id="second-image" name="second_image" accept="image/*" class="hidden">
+                                </div>
+                            </div>
+                            
+                            <!-- Image 3 -->
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-3">Image tertiaire</label>
+                                <div class="border-2 border-dashed border-dark-300 rounded-lg p-6 text-center hover:border-primary-500 transition-colors cursor-pointer" onclick="document.getElementById('third-image').click()">
+                                    <i data-lucide="upload" class="w-8 h-8 text-dark-400 mx-auto mb-3"></i>
+                                    <p class="text-p4 text-dark-600 mb-1">Cliquez pour télécharger</p>
+                                    <p class="text-p5 text-dark-500">PNG, JPG jusqu'à 5MB</p>
+                                    <input type="file" id="third-image" name="third_image" accept="image/*" class="hidden">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing and Stock -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h2 class="text-h4 text-dark-900 mb-6">Prix et stock</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="price">Prix de vente *</label>
+                                <div class="relative">
+                                    <input type="number" id="price" name="price" step="0.01" class="input-lg w-full pr-8" placeholder="15.99" required>
+                                    <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-dark-500">€</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="original_price">Prix original</label>
+                                <div class="relative">
+                                    <input type="number" id="original_price" name="original_price" step="0.01" class="input-lg w-full pr-8" placeholder="19.99">
+                                    <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-dark-500">€</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="stock">Stock disponible *</label>
+                                <input type="number" id="stock" name="stock" class="input-lg w-full" placeholder="50" required>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-2" for="format">Format</label>
+                                <select id="format" name="format" class="input-lg w-full">
+                                    <option value="broche">Broché</option>
+                                    <option value="relie">Relié</option>
+                                    <option value="poche">Livre de poche</option>
+                                    <option value="numerique">Numérique</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status and Visibility -->
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <h2 class="text-h4 text-dark-900 mb-6">Statut et visibilité</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-3">Statut de publication</label>
+                                <div class="space-y-3">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="status" value="draft" class="mr-3">
+                                        <div>
+                                            <div class="text-p3 font-medium text-dark-900">Brouillon</div>
+                                            <div class="text-p5 text-dark-500">Le livre ne sera pas visible sur le site</div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="status" value="pending" class="mr-3" checked>
+                                        <div>
+                                            <div class="text-p3 font-medium text-dark-900">En attente de validation</div>
+                                            <div class="text-p5 text-dark-500">Le livre sera soumis pour validation par l'administrateur</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-p4 text-dark-700 mb-3">Options</label>
+                                <div class="space-y-3">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="featured" class="mr-3">
+                                        <span class="text-p3 text-dark-900">Livre en vedette</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="new_release" class="mr-3" checked>
+                                        <span class="text-p3 text-dark-900">Nouvelle sortie</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" name="sale" class="mr-3">
+                                        <span class="text-p3 text-dark-900">En promotion</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center justify-between bg-white rounded-lg shadow-sm p-6">
+                        <button type="button" class="btn-md btn-outline-primary">
+                            <i data-lucide="eye" class="w-4 h-4 mr-2"></i>
+                            Prévisualiser
+                        </button>
+                        
+                        <div class="flex gap-3">
+                            <button type="button" class="btn-md btn-outline-secondary">
+                                <i data-lucide="save" class="w-4 h-4 mr-2"></i>
+                                Enregistrer en brouillon
+                            </button>
+                            <button type="submit" class="btn-md btn-primary">
+                                <i data-lucide="upload" class="w-4 h-4 mr-2"></i>
+                                Publier le livre
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // File upload preview functionality
+        function handleFileUpload(input, previewContainer) {
+            input.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        previewContainer.innerHTML = `
+                            <img src="${e.target.result}" alt="Preview" class="w-full h-32 object-cover rounded">
+                            <p class="text-p5 text-dark-500 mt-2">${file.name}</p>
+                        `;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Initialize file uploads
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImageInput = document.getElementById('main-image');
+            const secondImageInput = document.getElementById('second-image');
+            const thirdImageInput = document.getElementById('third-image');
+            
+            // You can add preview functionality here
+        });
+    </script>
+</body>
+</html>

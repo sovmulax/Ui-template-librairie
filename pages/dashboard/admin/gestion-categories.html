@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Gestion des catégories</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../../dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sora bg-dark-50">
+    <!-- Sidebar -->
+    <div class="flex h-screen">
+        <aside class="w-64 bg-dark-900 text-dark-50 flex flex-col">
+            <!-- Logo -->
+            <div class="p-6 border-b border-dark-700">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="text-h5 font-semibold">BookStore</span>
+                </div>
+                <p class="text-p5 text-dark-300 mt-1">Dashboard Admin</p>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="home" class="w-5 h-5"></i>
+                            <span class="text-p3">Tableau de bord</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestion-categories.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-500 text-white">
+                            <i data-lucide="tags" class="w-5 h-5"></i>
+                            <span class="text-p3 font-medium">Catégories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="validation-boutiques.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="store" class="w-5 h-5"></i>
+                            <span class="text-p3">Validation boutiques</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="validation-livres.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="book-check" class="w-5 h-5"></i>
+                            <span class="text-p3">Validation livres</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gestion-banners.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="image" class="w-5 h-5"></i>
+                            <span class="text-p3">Gestion banners</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tresorerie-boutiques.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="banknote" class="w-5 h-5"></i>
+                            <span class="text-p3">Trésorerie</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="utilisateurs.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="users" class="w-5 h-5"></i>
+                            <span class="text-p3">Utilisateurs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="parametres.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-dark-300 hover:bg-dark-800 hover:text-white transition-colors">
+                            <i data-lucide="settings" class="w-5 h-5"></i>
+                            <span class="text-p3">Paramètres</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- User Info -->
+            <div class="p-4 border-t border-dark-700">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                        <span class="text-p3 font-semibold text-white">AD</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-p4 font-medium text-white">Admin BookStore</p>
+                        <p class="text-p5 text-dark-300">admin@bookstore.com</p>
+                    </div>
+                    <button class="p-2 hover:bg-dark-800 rounded-lg">
+                        <i data-lucide="log-out" class="w-4 h-4 text-dark-300"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Navigation -->
+            <header class="bg-white border-b border-dark-200 px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-h3 text-dark-900 font-semibold">Gestion des catégories</h1>
+                        <p class="text-p3 text-dark-500">Organisez et gérez les catégories de livres</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="p-2 hover:bg-dark-100 rounded-lg relative">
+                            <i data-lucide="bell" class="w-5 h-5 text-dark-500"></i>
+                            <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
+                        </button>
+                        <a href="../../../index.html" class="btn-sm btn-outline-primary">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            Voir le site
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="flex-1 overflow-auto p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-p4 text-dark-500 font-medium">Total catégories</p>
+                                <p class="text-h3 text-dark-900 font-bold">12</p>
+                            </div>
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="tags" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-p4 text-dark-500 font-medium">Catégories actives</p>
+                                <p class="text-h3 text-dark-900 font-bold">10</p>
+                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-p4 text-dark-500 font-medium">Livres totaux</p>
+                                <p class="text-h3 text-dark-900 font-bold">1,247</p>
+                            </div>
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <i data-lucide="book" class="w-6 h-6 text-orange-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Management -->
+                <div class="bg-white rounded-lg shadow-sm">
+                    <!-- Header -->
+                    <div class="p-6 border-b border-dark-200">
+                        <div class="flex items-center justify-between">
+                            <h2 class="text-h4 text-dark-900 font-semibold">Liste des catégories</h2>
+                            <button class="btn-md btn-primary" onclick="openAddCategoryModal()">
+                                <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+                                Ajouter une catégorie
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search and Filters -->
+                    <div class="p-6 border-b border-dark-200">
+                        <div class="flex items-center gap-4">
+                            <div class="flex-1">
+                                <div class="relative">
+                                    <i data-lucide="search" class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-dark-400"></i>
+                                    <input type="text" placeholder="Rechercher une catégorie..." class="input-md w-full pl-10">
+                                </div>
+                            </div>
+                            <select class="input-md">
+                                <option>Toutes les catégories</option>
+                                <option>Actives</option>
+                                <option>Inactives</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Categories Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-dark-100">
+                                <tr>
+                                    <th class="table-head-1 px-6 py-4 text-left">Nom</th>
+                                    <th class="table-head-1 px-6 py-4 text-left">Description</th>
+                                    <th class="table-head-1 px-6 py-4 text-left">Livres</th>
+                                    <th class="table-head-1 px-6 py-4 text-left">Statut</th>
+                                    <th class="table-head-1 px-6 py-4 text-left">Créé le</th>
+                                    <th class="table-head-1 px-6 py-4 text-left">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-dark-200 hover:bg-dark-50">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                <i data-lucide="book" class="w-5 h-5 text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-p3 font-medium text-dark-900">Fiction</p>
+                                                <p class="text-p5 text-dark-500">fiction</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="text-p3 text-dark-700">Romans, nouvelles et œuvres de fiction</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 font-medium text-dark-900">324</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="tag-sm tag-green">Active</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 text-dark-500">15 mars 2023</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Modifier">
+                                                <i data-lucide="edit" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Désactiver">
+                                                <i data-lucide="eye-off" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-red-100 rounded-lg" title="Supprimer">
+                                                <i data-lucide="trash-2" class="w-4 h-4 text-red-500"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b border-dark-200 hover:bg-dark-50">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                                <i data-lucide="microscope" class="w-5 h-5 text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-p3 font-medium text-dark-900">Science</p>
+                                                <p class="text-p5 text-dark-500">science</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="text-p3 text-dark-700">Livres scientifiques et techniques</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 font-medium text-dark-900">156</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="tag-sm tag-green">Active</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 text-dark-500">12 mars 2023</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Modifier">
+                                                <i data-lucide="edit" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Désactiver">
+                                                <i data-lucide="eye-off" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-red-100 rounded-lg" title="Supprimer">
+                                                <i data-lucide="trash-2" class="w-4 h-4 text-red-500"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b border-dark-200 hover:bg-dark-50">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                                                <i data-lucide="scroll" class="w-5 h-5 text-purple-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-p3 font-medium text-dark-900">Histoire</p>
+                                                <p class="text-p5 text-dark-500">histoire</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="text-p3 text-dark-700">Livres d'histoire et récits historiques</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 font-medium text-dark-900">89</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="tag-sm tag-green">Active</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 text-dark-500">10 mars 2023</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Modifier">
+                                                <i data-lucide="edit" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Désactiver">
+                                                <i data-lucide="eye-off" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-red-100 rounded-lg" title="Supprimer">
+                                                <i data-lucide="trash-2" class="w-4 h-4 text-red-500"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="border-b border-dark-200 hover:bg-dark-50">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                                                <i data-lucide="user" class="w-5 h-5 text-orange-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-p3 font-medium text-dark-900">Biographie</p>
+                                                <p class="text-p5 text-dark-500">biographie</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <p class="text-p3 text-dark-700">Biographies et récits de vie</p>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 font-medium text-dark-900">67</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="tag-sm tag-orange">Inactive</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="text-p3 text-dark-500">08 mars 2023</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Modifier">
+                                                <i data-lucide="edit" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-dark-100 rounded-lg" title="Activer">
+                                                <i data-lucide="eye" class="w-4 h-4 text-dark-500"></i>
+                                            </button>
+                                            <button class="p-2 hover:bg-red-100 rounded-lg" title="Supprimer">
+                                                <i data-lucide="trash-2" class="w-4 h-4 text-red-500"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="px-6 py-4 border-t border-dark-200">
+                        <div class="flex items-center justify-between">
+                            <p class="text-p4 text-dark-500">Affichage de 1 à 4 sur 12 catégories</p>
+                            <div class="flex items-center gap-2">
+                                <button class="p-2 rounded-lg border border-dark-200 hover:bg-dark-50">
+                                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                </button>
+                                <button class="px-3 py-2 rounded-lg bg-primary-500 text-white">1</button>
+                                <button class="px-3 py-2 rounded-lg border border-dark-200 hover:bg-dark-50">2</button>
+                                <button class="px-3 py-2 rounded-lg border border-dark-200 hover:bg-dark-50">3</button>
+                                <button class="p-2 rounded-lg border border-dark-200 hover:bg-dark-50">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add Category Modal -->
+    <div id="addCategoryModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg max-w-md w-full mx-4">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-h4 text-dark-900 font-semibold">Ajouter une catégorie</h3>
+                    <button onclick="closeAddCategoryModal()" class="p-1 hover:bg-dark-100 rounded">
+                        <i data-lucide="x" class="w-5 h-5 text-dark-500"></i>
+                    </button>
+                </div>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-2" for="categoryName">Nom de la catégorie *</label>
+                        <input type="text" id="categoryName" class="input-md w-full" placeholder="Ex: Fiction, Science..." required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-2" for="categorySlug">URL (slug)</label>
+                        <input type="text" id="categorySlug" class="input-md w-full" placeholder="Ex: fiction, science..." readonly>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-2" for="categoryDescription">Description</label>
+                        <textarea id="categoryDescription" rows="3" class="input-md w-full resize-none" placeholder="Description de la catégorie..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-3">Icône</label>
+                        <div class="grid grid-cols-6 gap-3">
+                            <button type="button" class="p-3 border border-dark-200 rounded-lg hover:border-primary-500 hover:bg-primary-50">
+                                <i data-lucide="book" class="w-5 h-5 text-dark-500"></i>
+                            </button>
+                            <button type="button" class="p-3 border border-dark-200 rounded-lg hover:border-primary-500 hover:bg-primary-50">
+                                <i data-lucide="microscope" class="w-5 h-5 text-dark-500"></i>
+                            </button>
+                            <button type="button" class="p-3 border border-dark-200 rounded-lg hover:border-primary-500 hover:bg-primary-50">
+                                <i data-lucide="scroll" class="w-5 h-5 text-dark-500"></i>
+                            </button>
+                            <button type="button" class="p-3 border border-dark-200 rounded-lg hover:border-primary-500 hover:bg-primary-50">
+                                <i data-lucide="user" class="w-5 h-5 text-dark-500"></i>
+                            </button>
+                            <button type="button" class="p-3 border border-dark-200 rounded-lg hover:border-primary-500 hover:bg-primary-50">
+                                <i data-lucide="heart" class="w-5 h-5 text-dark-500"></i>
+                            </button>
+                            <button type="button" class="p-3 border border-dark-200 rounded-lg hover:border-primary-500 hover:bg-primary-50">
+                                <i data-lucide="star" class="w-5 h-5 text-dark-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-end gap-3 pt-4">
+                        <button type="button" onclick="closeAddCategoryModal()" class="btn-md btn-outline-secondary">
+                            Annuler
+                        </button>
+                        <button type="submit" class="btn-md btn-primary">
+                            Créer la catégorie
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Modal functions
+        function openAddCategoryModal() {
+            document.getElementById('addCategoryModal').classList.remove('hidden');
+        }
+
+        function closeAddCategoryModal() {
+            document.getElementById('addCategoryModal').classList.add('hidden');
+        }
+
+        // Auto-generate slug from category name
+        document.getElementById('categoryName').addEventListener('input', function(e) {
+            const slug = e.target.value
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+            document.getElementById('categorySlug').value = slug;
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('addCategoryModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAddCategoryModal();
+            }
+        });
+    </script>
+</body>
+</html>

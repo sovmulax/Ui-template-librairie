@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Mystère de la Chambre Jaune - BookStore</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sora bg-dark-50">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <div class="contact-info">
+                    <span>
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +(84) - 1800 - 4635
+                    </span>
+                    <span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        info@BookStore.com
+                    </span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="social-icon">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header border-b border-dark-200">
+        <div class="container mx-auto px-5 max-w-7xl py-5">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="book-open" class="w-8 h-8"></i>
+                    </div>
+                    <span class="text-h3 logo-text">BookStore</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Rechercher des livres..." class="search-input">
+                        <select class="search-select">
+                            <option>Toutes catégories</option>
+                            <option>Fiction</option>
+                            <option>Non-Fiction</option>
+                            <option>Science</option>
+                        </select>
+                        <button class="search-btn">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="header-actions">
+                    <button class="store-locator">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        Trouver une librairie
+                    </button>
+                    <div class="user-actions">
+                        <button class="user-btn">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </button>
+                        <button class="wishlist-btn">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </button>
+                        <button class="cart-btn">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span class="cart-count">2</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="container mx-auto px-5 max-w-7xl py-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <button class="categories-btn">
+                            <i data-lucide="grid-3x3" class="w-5 h-5"></i>
+                            Catégories
+                        </button>
+                        <ul class="nav-links">
+                            <li><a href="../../index.html" class="nav-link">Accueil</a></li>
+                            <li><a href="liste-livres.html" class="nav-link">Livres</a></li>
+                            <li><a href="blog.html" class="nav-link">Blog</a></li>
+                            <li><a href="#" class="nav-link">Contact</a></li>
+                            <li><a href="#" class="nav-link">À propos</a></li>
+                        </ul>
+                    </div>
+                    <div class="support-info">
+                        <div class="support-phone">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            +1 840 - 841 25 69
+                        </div>
+                        <div class="support-text">Centre de support 24/7</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-5 max-w-7xl py-8">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb mb-6">
+            <ol class="flex items-center space-x-2 text-p4 text-dark-500">
+                <li><a href="../../index.html" class="hover:text-primary-500">Accueil</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                <li><a href="liste-livres.html" class="hover:text-primary-500">Livres</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                <li><a href="#" class="hover:text-primary-500">Fiction</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4"></i></li>
+                <li class="text-dark-900">Le Mystère de la Chambre Jaune</li>
+            </ol>
+        </nav>
+
+        <!-- Product Details -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <!-- Product Images -->
+            <div class="space-y-4">
+                <div class="relative">
+                    <img src="https://via.placeholder.com/500x700?text=Livre+Principal" alt="Le Mystère de la Chambre Jaune" class="w-full rounded-lg shadow-lg" id="mainImage">
+                    <button class="absolute top-4 right-4 p-3 bg-white rounded-full shadow-md hover:bg-red-50">
+                        <i data-lucide="heart" class="w-6 h-6 text-dark-500 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="flex gap-4 overflow-x-auto">
+                    <img src="https://via.placeholder.com/100x140?text=Vue+1" alt="Vue 1" class="w-20 h-28 object-cover rounded cursor-pointer border-2 border-primary-500" onclick="changeImage(this.src.replace('100x140', '500x700'))">
+                    <img src="https://via.placeholder.com/100x140?text=Vue+2" alt="Vue 2" class="w-20 h-28 object-cover rounded cursor-pointer border-2 border-transparent hover:border-primary-500" onclick="changeImage(this.src.replace('100x140', '500x700'))">
+                    <img src="https://via.placeholder.com/100x140?text=Vue+3" alt="Vue 3" class="w-20 h-28 object-cover rounded cursor-pointer border-2 border-transparent hover:border-primary-500" onclick="changeImage(this.src.replace('100x140', '500x700'))">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="space-y-6">
+                <div>
+                    <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-p5 font-semibold mb-3">Nouveau</span>
+                    <h1 class="text-h2 text-dark-900 mb-2">Le Mystère de la Chambre Jaune</h1>
+                    <p class="text-p2 text-dark-600 mb-4">par <a href="#" class="text-primary-500 hover:underline">Gaston Leroux</a></p>
+                    
+                    <!-- Rating -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <div class="flex text-yellow-400">
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                <i data-lucide="star" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-p3 text-dark-600">4.0 (124 avis)</span>
+                        </div>
+                        <a href="#reviews" class="text-p3 text-primary-500 hover:underline">Voir tous les avis</a>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-h2 text-primary-500">15,99€</span>
+                        <span class="text-p2 text-dark-500 line-through">19,99€</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-p5 font-semibold">-20%</span>
+                    </div>
+
+                    <!-- Book Details -->
+                    <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-dark-100 rounded-lg">
+                        <div>
+                            <span class="text-p5 text-dark-500 font-medium">Format:</span>
+                            <p class="text-p3 text-dark-900">Broché</p>
+                        </div>
+                        <div>
+                            <span class="text-p5 text-dark-500 font-medium">Pages:</span>
+                            <p class="text-p3 text-dark-900">312</p>
+                        </div>
+                        <div>
+                            <span class="text-p5 text-dark-500 font-medium">Langue:</span>
+                            <p class="text-p3 text-dark-900">Français</p>
+                        </div>
+                        <div>
+                            <span class="text-p5 text-dark-500 font-medium">ISBN:</span>
+                            <p class="text-p3 text-dark-900">978-2-253-00421-2</p>
+                        </div>
+                        <div>
+                            <span class="text-p5 text-dark-500 font-medium">Éditeur:</span>
+                            <p class="text-p3 text-dark-900">Le Livre de Poche</p>
+                        </div>
+                        <div>
+                            <span class="text-p5 text-dark-500 font-medium">Date de publication:</span>
+                            <p class="text-p3 text-dark-900">15 mars 2023</p>
+                        </div>
+                    </div>
+
+                    <!-- Quantity and Add to Cart -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="flex items-center border border-dark-200 rounded-lg">
+                            <button class="p-3 hover:bg-dark-100" onclick="decreaseQuantity()">
+                                <i data-lucide="minus" class="w-4 h-4"></i>
+                            </button>
+                            <span class="px-4 py-3 text-p3 font-medium" id="quantity">1</span>
+                            <button class="p-3 hover:bg-dark-100" onclick="increaseQuantity()">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <button class="btn-lg btn-primary flex-1">
+                            <i data-lucide="shopping-cart" class="w-5 h-5 mr-2"></i>
+                            Ajouter au panier
+                        </button>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4 mb-6">
+                        <button class="btn-lg btn-outline-primary flex-1">
+                            <i data-lucide="heart" class="w-5 h-5 mr-2"></i>
+                            Ajouter aux favoris
+                        </button>
+                        <button class="btn-lg btn-outline-primary">
+                            <i data-lucide="share-2" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+
+                    <!-- Shipping Info -->
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i data-lucide="truck" class="w-5 h-5 text-green-600"></i>
+                            <span class="text-p3 font-medium text-green-800">Livraison gratuite</span>
+                        </div>
+                        <p class="text-p4 text-green-700">Livraison gratuite pour les commandes de plus de 30€</p>
+                        <p class="text-p4 text-green-700">Livraison estimée: 2-3 jours ouvrables</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-12">
+            <div class="border-b border-dark-200">
+                <nav class="flex">
+                    <button class="tab-button active px-6 py-4 text-p3 font-medium border-b-2 border-primary-500 text-primary-500" onclick="showTab('description')">
+                        Description
+                    </button>
+                    <button class="tab-button px-6 py-4 text-p3 font-medium border-b-2 border-transparent text-dark-500 hover:text-primary-500" onclick="showTab('specifications')">
+                        Spécifications
+                    </button>
+                    <button class="tab-button px-6 py-4 text-p3 font-medium border-b-2 border-transparent text-dark-500 hover:text-primary-500" onclick="showTab('reviews')">
+                        Avis (124)
+                    </button>
+                </nav>
+            </div>
+
+            <div class="p-6">
+                <!-- Description Tab -->
+                <div id="description" class="tab-content">
+                    <div class="prose max-w-none">
+                        <p class="text-p2 text-dark-700 leading-relaxed mb-4">
+                            "Le Mystère de la Chambre Jaune" est l'un des plus célèbres romans policiers de Gaston Leroux, publié pour la première fois en 1907. Cette œuvre majeure du genre policier français met en scène le jeune reporter Joseph Rouletabille et son enquête sur un crime apparemment impossible.
+                        </p>
+                        <p class="text-p2 text-dark-700 leading-relaxed mb-4">
+                            L'intrigue débute lorsque Mademoiselle Stangerson est retrouvée grièvement blessée dans sa chambre jaune, une pièce fermée de l'intérieur. Le mystère s'épaissit quand on découvre que l'agresseur a disparu sans laisser de trace, rendant le crime apparemment impossible.
+                        </p>
+                        <p class="text-p2 text-dark-700 leading-relaxed mb-6">
+                            Rouletabille, jeune journaliste doué d'une intelligence remarquable, se lance dans une enquête minutieuse qui le mènera à démêler les fils de cette affaire complexe. Avec la logique et la déduction comme seules armes, il devra résoudre ce mystère qui défie toute explication rationnelle.
+                        </p>
+                        <h3 class="text-h5 text-dark-900 mb-3">Points forts du livre:</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-p3 text-dark-700">
+                            <li>Une intrigue captivante et un mystère apparemment impossible</li>
+                            <li>Un héros attachant et intelligent en la personne de Rouletabille</li>
+                            <li>Une atmosphère gothique et mystérieuse parfaitement maîtrisée</li>
+                            <li>Une œuvre fondatrice du roman policier français</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Specifications Tab -->
+                <div id="specifications" class="tab-content hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-h5 text-dark-900 mb-4">Informations générales</h3>
+                            <dl class="space-y-3">
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Titre:</dt>
+                                    <dd class="text-p3 text-dark-900">Le Mystère de la Chambre Jaune</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Auteur:</dt>
+                                    <dd class="text-p3 text-dark-900">Gaston Leroux</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Genre:</dt>
+                                    <dd class="text-p3 text-dark-900">Roman policier</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Collection:</dt>
+                                    <dd class="text-p3 text-dark-900">Le Livre de Poche</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <div>
+                            <h3 class="text-h5 text-dark-900 mb-4">Détails physiques</h3>
+                            <dl class="space-y-3">
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Format:</dt>
+                                    <dd class="text-p3 text-dark-900">Broché</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Dimensions:</dt>
+                                    <dd class="text-p3 text-dark-900">11 x 17,8 cm</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Poids:</dt>
+                                    <dd class="text-p3 text-dark-900">285g</dd>
+                                </div>
+                                <div class="flex justify-between">
+                                    <dt class="text-p3 text-dark-500">Nombre de pages:</dt>
+                                    <dd class="text-p3 text-dark-900">312</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div id="reviews" class="tab-content hidden">
+                    <div class="mb-8">
+                        <div class="flex items-center gap-8 mb-6">
+                            <div class="text-center">
+                                <div class="text-h1 text-primary-500 mb-2">4.0</div>
+                                <div class="flex text-yellow-400 mb-2">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                    <i data-lucide="star" class="w-5 h-5"></i>
+                                </div>
+                                <div class="text-p4 text-dark-500">124 avis</div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-p5 w-8">5★</span>
+                                        <div class="flex-1 bg-dark-200 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 45%"></div>
+                                        </div>
+                                        <span class="text-p5 text-dark-500 w-8">56</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-p5 w-8">4★</span>
+                                        <div class="flex-1 bg-dark-200 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 35%"></div>
+                                        </div>
+                                        <span class="text-p5 text-dark-500 w-8">43</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-p5 w-8">3★</span>
+                                        <div class="flex-1 bg-dark-200 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 15%"></div>
+                                        </div>
+                                        <span class="text-p5 text-dark-500 w-8">19</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-p5 w-8">2★</span>
+                                        <div class="flex-1 bg-dark-200 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 3%"></div>
+                                        </div>
+                                        <span class="text-p5 text-dark-500 w-8">4</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-p5 w-8">1★</span>
+                                        <div class="flex-1 bg-dark-200 rounded-full h-2">
+                                            <div class="bg-yellow-400 h-2 rounded-full" style="width: 2%"></div>
+                                        </div>
+                                        <span class="text-p5 text-dark-500 w-8">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-md btn-primary">
+                            <i data-lucide="pencil" class="w-4 h-4 mr-2"></i>
+                            Écrire un avis
+                        </button>
+                    </div>
+
+                    <!-- Individual Reviews -->
+                    <div class="space-y-6">
+                        <div class="border-b border-dark-200 pb-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <span class="text-p3 font-semibold text-primary-500">MJ</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="text-p3 font-semibold text-dark-900">Marie Joubert</span>
+                                        <div class="flex text-yellow-400">
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        </div>
+                                        <span class="text-p5 text-dark-500">Il y a 2 jours</span>
+                                    </div>
+                                    <p class="text-p3 text-dark-700 mb-3">
+                                        Un classique incontournable ! L'intrigue est captivante et Rouletabille est un personnage vraiment attachant. La résolution du mystère est brillante et logique. Je recommande vivement ce livre à tous les amateurs de polar.
+                                    </p>
+                                    <div class="flex items-center gap-4 text-p5 text-dark-500">
+                                        <button class="hover:text-primary-500">
+                                            <i data-lucide="thumbs-up" class="w-4 h-4 mr-1"></i>
+                                            Utile (12)
+                                        </button>
+                                        <button class="hover:text-primary-500">Répondre</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-b border-dark-200 pb-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                    <span class="text-p3 font-semibold text-primary-500">PL</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <span class="text-p3 font-semibold text-dark-900">Pierre Lefèvre</span>
+                                        <div class="flex text-yellow-400">
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                            <i data-lucide="star" class="w-4 h-4"></i>
+                                        </div>
+                                        <span class="text-p5 text-dark-500">Il y a 1 semaine</span>
+                                    </div>
+                                    <p class="text-p3 text-dark-700 mb-3">
+                                        Très bon roman policier avec une intrigue bien ficelée. Le style de Gaston Leroux vieillit un peu mais l'histoire reste prenante. Un must-have pour comprendre les origines du polar français.
+                                    </p>
+                                    <div class="flex items-center gap-4 text-p5 text-dark-500">
+                                        <button class="hover:text-primary-500">
+                                            <i data-lucide="thumbs-up" class="w-4 h-4 mr-1"></i>
+                                            Utile (8)
+                                        </button>
+                                        <button class="hover:text-primary-500">Répondre</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-8">
+                        <button class="btn-md btn-outline-primary">
+                            Voir plus d'avis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <section class="mb-12">
+            <h2 class="text-h3 text-dark-900 mb-6">Vous pourriez aussi aimer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Related Product 1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/300x400?text=Livre+Similaire+1" alt="Livre similaire" class="w-full h-64 object-cover">
+                        <button class="absolute top-3 right-3 p-2 bg-white rounded-full shadow-md hover:bg-red-50">
+                            <i data-lucide="heart" class="w-5 h-5 text-dark-500 hover:text-red-500"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-h6 text-dark-900 mb-2">Le Fantôme de l'Opéra</h3>
+                        <p class="text-p4 text-dark-500 mb-2">Gaston Leroux</p>
+                        <div class="flex items-center mb-3">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4"></i>
+                            </div>
+                            <span class="text-p5 text-dark-500">(89 avis)</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-h6 text-primary-500">14,99€</span>
+                            <button class="btn-sm btn-primary">
+                                <i data-lucide="shopping-cart" class="w-4 h-4 mr-1"></i>
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more related products... -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="logo mb-5">
+                        <div class="logo-icon">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-h4 logo-text">BookStore</span>
+                    </div>
+                    <p class="company-description">
+                        Trouvez une librairie près de chez vous.<br>
+                        Voir nos magasins
+                    </p>
+                    <div class="contact-info space-y-2">
+                        <p class="phone">+(84) - 1800 - 4635</p>
+                        <p class="email">hello@BookStore.com</p>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4>Informations de contact</h4>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-p3 text-dark-500 leading-relaxed">927 Phoenix Bldg., Quezon</p>
+                            <p class="text-p3 text-dark-500 leading-relaxed">Ave., Quezon City</p>
+                        </div>
+                        <div>
+                            <p class="text-p3 text-dark-500 leading-relaxed">Lundi - Vendredi: 9:00-20:00</p>
+                            <p class="text-p3 text-dark-500 leading-relaxed">Samedi: 11:00 - 15:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explore -->
+                <div class="footer-section">
+                    <h4>Explorer</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Catégories</a></li>
+                        <li><a href="#">Produits</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe -->
+                <div class="footer-section">
+                    <h4>S'abonner</h4>
+                    <p class="subscribe-text">
+                        Entrez votre email pour être le premier informé des nouvelles collections et lancements de produits.
+                    </p>
+                    <div class="flex rounded-full overflow-hidden bg-dark-50">
+                        <input type="email" placeholder="Adresse email" class="flex-1 px-5 py-3 text-p4 border-none outline-none bg-transparent">
+                        <button class="bg-primary-500 text-white px-6 py-3 text-p4 font-semibold hover:bg-primary-500/90 transition-colors">
+                            S'abonner
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">VISA</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">MC</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">AMEX</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">GPAY</div>
+                </div>
+                <p class="copyright">Copyright © 2023 BookStore. Tous droits réservés</p>
+                <div class="social-links">
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            // Update border on thumbnails
+            document.querySelectorAll('.cursor-pointer').forEach(img => {
+                img.classList.remove('border-primary-500');
+                img.classList.add('border-transparent');
+            });
+            event.target.classList.remove('border-transparent');
+            event.target.classList.add('border-primary-500');
+        }
+
+        // Quantity functionality
+        function increaseQuantity() {
+            const quantity = document.getElementById('quantity');
+            quantity.textContent = parseInt(quantity.textContent) + 1;
+        }
+
+        function decreaseQuantity() {
+            const quantity = document.getElementById('quantity');
+            const value = parseInt(quantity.textContent);
+            if (value > 1) {
+                quantity.textContent = value - 1;
+            }
+        }
+
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active', 'border-primary-500', 'text-primary-500');
+                button.classList.add('border-transparent', 'text-dark-500');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.remove('hidden');
+            
+            // Add active class to clicked tab button
+            event.target.classList.remove('border-transparent', 'text-dark-500');
+            event.target.classList.add('active', 'border-primary-500', 'text-primary-500');
+        }
+    </script>
+</body>
+</html>
