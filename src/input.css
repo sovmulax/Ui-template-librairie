@@ -1,3 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Typography Utilities */
+  .text-h1 { @apply text-h1 font-sora; }
+  .text-h2 { @apply text-h2 font-sora; }
+  .text-h3 { @apply text-h3 font-sora; }
+  .text-h4 { @apply text-h4 font-sora; }
+  .text-h5 { @apply text-h5 font-sora; }
+  .text-h6 { @apply text-h6 font-sora; }
+  
+  .text-p1 { @apply text-p1 font-sora; }
+  .text-p2 { @apply text-p2 font-sora; }
+  .text-p3 { @apply text-p3 font-sora; }
+  .text-p4 { @apply text-p4 font-sora; }
+  .text-p5 { @apply text-p5 font-sora; }
+
+  /* Button Components */
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-lg border border-transparent font-sora transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-lg {
+    @apply btn-base px-6 py-3 text-btn-lg;
+  }
+  
+  .btn-md {
+    @apply btn-base px-4 py-2 text-btn-md;
+  }
+  
+  .btn-sm {
+    @apply btn-base px-3 py-1.5 text-btn-sm;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-500/90 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-500/90 focus:ring-secondary-500;
+  }
+  
+  .btn-outline-primary {
+    @apply border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500;
+  }
+  
+  .btn-outline-secondary {
+    @apply border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-white focus:ring-secondary-500;
+  }
+
+  /* Input Components */
+  .input-base {
+    @apply w-full rounded-lg border border-dark-300 bg-white font-sora transition-colors duration-200 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500;
+  }
+  
+  .input-lg {
+    @apply input-base px-4 py-3 text-input-lg;
+  }
+  
+  .input-md {
+    @apply input-base px-3 py-2 text-input-md;
+  }
+  
+  .input-sm {
+    @apply input-base px-2 py-1.5 text-input-sm;
+  }
+
+  /* Tag Components */
+  .tag-base {
+    @apply inline-flex items-center rounded-full font-sora;
+  }
+  
+  .tag-md {
+    @apply tag-base px-3 py-1 text-tag-md;
+  }
+  
+  .tag-sm {
+    @apply tag-base px-2 py-0.5 text-tag-sm;
+  }
+
+  /* Tag Variants */
+  .tag-primary {
+    @apply bg-primary-50 text-primary-500;
+  }
+  
+  .tag-secondary {
+    @apply bg-secondary-50 text-secondary-500;
+  }
+  
+  .tag-blue {
+    @apply bg-blue-50 text-blue-500;
+  }
+  
+  .tag-green {
+    @apply bg-green-50 text-green-500;
+  }
+  
+  .tag-orange {
+    @apply bg-orange-50 text-orange-500;
+  }
+  
+  .tag-red {
+    @apply bg-red-50 text-red-500;
+  }
+
+  /* Table Head Components */
+  .table-head-1 {
+    @apply text-table-head-1 font-sora text-dark-500 uppercase tracking-wider;
+  }
+  
+  .table-head-2 {
+    @apply text-table-head-2 font-sora text-dark-500 uppercase tracking-wider;
+  }
+}
