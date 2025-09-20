@@ -5,19 +5,6 @@
 @tailwind utilities;
 
 @layer components {
-  /* Typography Utilities */
-  .text-h1 { @apply text-h1 font-sora; }
-  .text-h2 { @apply text-h2 font-sora; }
-  .text-h3 { @apply text-h3 font-sora; }
-  .text-h4 { @apply text-h4 font-sora; }
-  .text-h5 { @apply text-h5 font-sora; }
-  .text-h6 { @apply text-h6 font-sora; }
-  
-  .text-p1 { @apply text-p1 font-sora; }
-  .text-p2 { @apply text-p2 font-sora; }
-  .text-p3 { @apply text-p3 font-sora; }
-  .text-p4 { @apply text-p4 font-sora; }
-  .text-p5 { @apply text-p5 font-sora; }
 
   /* Button Components */
   .btn-base {
