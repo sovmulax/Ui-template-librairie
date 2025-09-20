@@ -3,7 +3,7 @@
 ## Générale
 
 - Page d'acceuil avec banner et boutton sur les banner
-   - Un boutton sur le banner renvoie à un livre ou une liste de livre
+  - Un boutton sur le banner renvoie à un livre ou une liste de livre
 - Mise en favoris des livres
 - Création et validation d’un panier de livre
 - Accès au blog (Annonce)
@@ -13,8 +13,8 @@
 ## Compte Client
 
 - Connexion / Inscription
-    - Modification du mot de passe
-    - Email de réinitialisation de mot de passe
+  - Modification du mot de passe
+  - Email de réinitialisation de mot de passe
 - Notifications par mail (Newsletter et achat)
 - Liste des livres acheter et boutton pour télécharger
 - Abonnement au Boutique
@@ -25,17 +25,17 @@
 - Création de compte
 - Paiement de l’abonnement
 - Ajout de livre
-    - Couverture du livre (3 images)
-    - Description du livre
-    - Auteur
-    - Catégorie
+  - Couverture du livre (3 images)
+  - Description du livre
+  - Auteur
+  - Catégorie
 - Liste des livres (CRUD)
 - Suivie de sa caisse
 - Historique des ventes
 - Gestion de trésorerie
-    - Montant reçu
-    - Montant restant
-    - Demande de verserment
+  - Montant reçu
+  - Montant restant
+  - Demande de verserment
 - Ajout des Articles dans le blog
 
 ## Compte Admin (dashbord)
@@ -47,6 +47,7 @@
 - Gestion de la trésoreries par boutiques
 
 ## Technologie
+
 - Tailwind css
 - DaisyUI
 - Post CSS
