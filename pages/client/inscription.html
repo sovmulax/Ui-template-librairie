@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - BookStore</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sora bg-dark-50">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <div class="contact-info">
+                    <span>
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +(84) - 1800 - 4635
+                    </span>
+                    <span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        info@BookStore.com
+                    </span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="connexion.html" class="text-p5 text-dark-700 hover:text-primary-500">Connexion</a>
+                    <span class="text-dark-300">|</span>
+                    <a href="inscription.html" class="text-p5 text-primary-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <span class="logo-text">BookStore</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex items-center">
+                    <ul class="flex gap-10">
+                        <li><a href="../../index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="livres.html" class="nav-link">Livres</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div class="user-actions">
+                        <button class="user-btn">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </button>
+                        <button class="wishlist-btn">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </button>
+                        <button class="cart-btn">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span class="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-10 min-h-screen">
+        <div class="container mx-auto px-5 max-w-md">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-h2 text-dark-900 mb-2">Créer un compte</h1>
+                    <p class="text-p3 text-dark-500">Rejoignez notre communauté de lecteurs</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-p4 text-dark-700 mb-2">Prénom *</label>
+                            <input type="text" class="input-md w-full" placeholder="Votre prénom" required>
+                        </div>
+                        <div>
+                            <label class="block text-p4 text-dark-700 mb-2">Nom *</label>
+                            <input type="text" class="input-md w-full" placeholder="Votre nom" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-2">Email *</label>
+                        <input type="email" class="input-md w-full" placeholder="votre@email.com" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-2">Numéro de téléphone</label>
+                        <input type="tel" class="input-md w-full" placeholder="+33 1 23 45 67 89">
+                    </div>
+
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-2">Mot de passe *</label>
+                        <input type="password" class="input-md w-full" placeholder="Minimum 8 caractères" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-p4 text-dark-700 mb-2">Confirmer le mot de passe *</label>
+                        <input type="password" class="input-md w-full" placeholder="Confirmez votre mot de passe" required>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="flex items-start gap-3">
+                            <input type="checkbox" class="mt-1" required>
+                            <span class="text-p4 text-dark-600">
+                                J'accepte les <a href="#" class="text-primary-500 hover:underline">conditions d'utilisation</a> 
+                                et la <a href="#" class="text-primary-500 hover:underline">politique de confidentialité</a>
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3">
+                            <input type="checkbox" class="mt-1">
+                            <span class="text-p4 text-dark-600">
+                                Je souhaite recevoir les newsletters et offres spéciales
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-lg btn-primary w-full">
+                        <i data-lucide="user-plus" class="w-5 h-5"></i>
+                        Créer mon compte
+                    </button>
+                </form>
+
+                <div class="text-center mt-6">
+                    <p class="text-p4 text-dark-500">
+                        Déjà un compte ? 
+                        <a href="connexion.html" class="text-primary-500 hover:underline font-medium">Se connecter</a>
+                    </p>
+                </div>
+
+                <!-- Social Login -->
+                <div class="mt-8">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-dark-200"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-dark-500">Ou continuer avec</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-2 gap-3">
+                        <button class="btn-md btn-outline-primary w-full">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            Google
+                        </button>
+                        <button class="btn-md btn-outline-primary w-full">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="logo mb-5">
+                        <div class="logo-icon">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-h4 logo-text">BookStore</span>
+                    </div>
+                    <p class="company-description">
+                        Votre librairie en ligne<br>
+                        pour tous vos livres favoris
+                    </p>
+                    <div class="contact-info space-y-2">
+                        <p class="phone">+(84) - 1800 - 4635</p>
+                        <p class="email">hello@BookStore.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Accueil</a></li>
+                        <li><a href="livres.html">Livres</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-section">
+                    <h4>Catégories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Non-fiction</a></li>
+                        <li><a href="#">Sciences</a></li>
+                        <li><a href="#">Histoire</a></li>
+                        <li><a href="#">Art</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 BookStore. Tous droits réservés.</p>
+                </div>
+                <div class="payment-methods">
+                    <span class="text-p5 text-dark-500">Paiements sécurisés</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Étranger - Albert Camus - BookStore</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sora bg-dark-50">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <div class="contact-info">
+                    <span>
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +(84) - 1800 - 4635
+                    </span>
+                    <span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        info@BookStore.com
+                    </span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="connexion.html" class="text-p5 text-dark-700 hover:text-primary-500">Connexion</a>
+                    <span class="text-dark-300">|</span>
+                    <a href="inscription.html" class="text-p5 text-dark-700 hover:text-primary-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <span class="logo-text">BookStore</span>
+                </div>
+
+                <!-- Search -->
+                <div class="search-container">
+                    <div class="relative">
+                        <input type="text" class="search-input" placeholder="Rechercher des livres, auteurs...">
+                        <button class="search-btn">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div class="user-actions">
+                        <button class="user-btn">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </button>
+                        <button class="wishlist-btn">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                            <span class="cart-count">3</span>
+                        </button>
+                        <button class="cart-btn">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span class="cart-count">2</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <div class="container mx-auto px-5 max-w-7xl">
+                <div class="flex justify-between items-center">
+                    <ul class="nav-links">
+                        <li><a href="accueil.html" class="nav-link">Accueil</a></li>
+                        <li><a href="livres.html" class="nav-link text-primary-500">Livres</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li><a href="#" class="nav-link">Nouveautés</a></li>
+                        <li><a href="#" class="nav-link">Promotions</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="support-info">
+                        <span class="text-p3 font-semibold text-primary-500 flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            +1 840 - 841 25 69
+                        </span>
+                        <span class="text-p5 text-dark-500">Centre d'aide 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-dark-200 py-4">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <ol class="flex items-center gap-2 text-p4">
+                <li><a href="accueil.html" class="text-primary-500 hover:underline">Accueil</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4 text-dark-400"></i></li>
+                <li><a href="livres.html" class="text-primary-500 hover:underline">Livres</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4 text-dark-400"></i></li>
+                <li><a href="#" class="text-primary-500 hover:underline">Fiction</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4 text-dark-400"></i></li>
+                <li class="text-dark-900 font-medium">L'Étranger</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-8">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="grid grid-cols-12 gap-8">
+                <!-- Book Details -->
+                <div class="col-span-12 lg:col-span-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <!-- Book Cover -->
+                        <div class="space-y-4">
+                            <div class="aspect-[3/4] bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                <i data-lucide="book" class="w-24 h-24 text-white"></i>
+                            </div>
+                            <!-- Thumbnail Gallery -->
+                            <div class="flex gap-2">
+                                <div class="w-16 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center border-2 border-primary-500">
+                                    <i data-lucide="book" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div class="w-16 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center border border-dark-200">
+                                    <i data-lucide="image" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div class="w-16 h-20 bg-gradient-to-br from-blue-600 to-purple-700 rounded-lg flex items-center justify-center border border-dark-200">
+                                    <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Book Info -->
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="tag tag-primary">Fiction</span>
+                                    <span class="tag tag-secondary">Classique</span>
+                                </div>
+                                <h1 class="text-h1 text-dark-900 mb-2">L'Étranger</h1>
+                                <p class="text-p2 text-dark-600 mb-4">par <a href="#" class="text-primary-500 hover:underline font-medium">Albert Camus</a></p>
+                                
+                                <!-- Rating -->
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="flex items-center gap-1">
+                                        <div class="flex text-yellow-400">
+                                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                            <i data-lucide="star" class="w-5 h-5"></i>
+                                        </div>
+                                        <span class="text-p3 font-medium text-dark-900 ml-2">4.2</span>
+                                    </div>
+                                    <span class="text-p4 text-dark-500">(1,247 avis)</span>
+                                    <a href="#reviews" class="text-p4 text-primary-500 hover:underline">Voir les avis</a>
+                                </div>
+
+                                <!-- Price -->
+                                <div class="flex items-center gap-4 mb-6">
+                                    <span class="text-h3 text-primary-500 font-bold">12,99 €</span>
+                                    <span class="text-p3 text-dark-500 line-through">15,99 €</span>
+                                    <span class="tag tag-secondary">-19%</span>
+                                </div>
+
+                                <!-- Book Details -->
+                                <div class="grid grid-cols-2 gap-4 mb-6 text-p4">
+                                    <div>
+                                        <span class="text-dark-500">Éditeur:</span>
+                                        <span class="text-dark-900 ml-2">Gallimard</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-dark-500">Pages:</span>
+                                        <span class="text-dark-900 ml-2">123</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-dark-500">Langue:</span>
+                                        <span class="text-dark-900 ml-2">Français</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-dark-500">Format:</span>
+                                        <span class="text-dark-900 ml-2">PDF, EPUB</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-dark-500">ISBN:</span>
+                                        <span class="text-dark-900 ml-2">978-2-07-036002-1</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-dark-500">Boutique:</span>
+                                        <a href="boutique-profil.html" class="text-primary-500 hover:underline ml-2">Librairie Centrale</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="space-y-4">
+                                <div class="flex gap-3">
+                                    <button class="btn-lg btn-primary flex-1">
+                                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                                        Ajouter au panier
+                                    </button>
+                                    <button class="btn-lg btn-outline-primary">
+                                        <i data-lucide="heart" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                                <button class="btn-md btn-secondary w-full">
+                                    <i data-lucide="zap" class="w-4 h-4"></i>
+                                    Acheter maintenant
+                                </button>
+                                <div class="flex gap-2">
+                                    <button class="btn-sm btn-outline-primary flex-1">
+                                        <i data-lucide="eye" class="w-4 h-4"></i>
+                                        Aperçu
+                                    </button>
+                                    <button class="btn-sm btn-outline-primary flex-1">
+                                        <i data-lucide="share-2" class="w-4 h-4"></i>
+                                        Partager
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Shipping Info -->
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="truck" class="w-5 h-5 text-green-600"></i>
+                                    <div>
+                                        <p class="text-p4 font-medium text-green-800">Livraison gratuite</p>
+                                        <p class="text-p5 text-green-600">Téléchargement immédiat après paiement</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabs Section -->
+                    <div class="bg-white rounded-xl shadow-sm">
+                        <div class="border-b border-dark-200">
+                            <nav class="flex">
+                                <button class="px-6 py-4 text-p3 font-medium text-primary-500 border-b-2 border-primary-500">
+                                    Description
+                                </button>
+                                <button class="px-6 py-4 text-p3 font-medium text-dark-500 hover:text-dark-900">
+                                    Avis (1,247)
+                                </button>
+                                <button class="px-6 py-4 text-p3 font-medium text-dark-500 hover:text-dark-900">
+                                    Informations
+                                </button>
+                            </nav>
+                        </div>
+
+                        <div class="p-6">
+                            <!-- Description Tab -->
+                            <div>
+                                <h3 class="text-h4 text-dark-900 mb-4">À propos de ce livre</h3>
+                                <div class="prose prose-dark max-w-none">
+                                    <p class="text-p3 text-dark-700 leading-relaxed mb-4">
+                                        <em>L'Étranger</em> est un roman d'Albert Camus publié en 1942. Il prend place 
+                                        dans l'Algérie française et s'articule en deux parties. Il forme un diptyque 
+                                        avec l'essai <em>Le Mythe de Sisyphe</em> publié la même année.
+                                    </p>
+                                    <p class="text-p3 text-dark-700 leading-relaxed mb-4">
+                                        Meursault, le narrateur, est un homme ordinaire employé de bureau vivant à Alger. 
+                                        Le récit s'ouvre sur l'annonce de la mort de sa mère. Lors de l'enterrement, 
+                                        il ne montre aucune émotion particulière et choque par son détachement.
+                                    </p>
+                                    <p class="text-p3 text-dark-700 leading-relaxed mb-4">
+                                        Le lendemain des obsèques, il rencontre Marie, une ancienne dactylo de son bureau. 
+                                        Ils passent l'après-midi ensemble à la plage et entament une relation. 
+                                        Quelques jours plus tard, il aide son voisin Raymond dans une affaire louche...
+                                    </p>
+                                    
+                                    <h4 class="text-p2 font-semibold text-dark-900 mt-6 mb-3">Pourquoi lire ce livre ?</h4>
+                                    <ul class="space-y-2">
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-5 h-5 text-green-500 mt-0.5"></i>
+                                            <span class="text-p4 text-dark-700">Un classique de la littérature française du XXe siècle</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-5 h-5 text-green-500 mt-0.5"></i>
+                                            <span class="text-p4 text-dark-700">Une exploration profonde de l'absurdité de l'existence</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-5 h-5 text-green-500 mt-0.5"></i>
+                                            <span class="text-p4 text-dark-700">Un style d'écriture simple et percutant</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="check" class="w-5 h-5 text-green-500 mt-0.5"></i>
+                                            <span class="text-p4 text-dark-700">Une réflexion sur la condition humaine</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="col-span-12 lg:col-span-4 space-y-6">
+                    <!-- Author Info -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-h4 text-dark-900 mb-4">À propos de l'auteur</h3>
+                        <div class="flex gap-4 mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-p2 font-semibold text-dark-900 mb-1">Albert Camus</h4>
+                                <p class="text-p4 text-dark-500">1913-1960</p>
+                                <p class="text-p5 text-dark-400">Prix Nobel de littérature 1957</p>
+                            </div>
+                        </div>
+                        <p class="text-p4 text-dark-700 leading-relaxed mb-4">
+                            Écrivain, philosophe, romancier, dramaturge et essayiste français 
+                            né en Algérie. Figure emblématique de l'existentialisme.
+                        </p>
+                        <a href="#" class="text-p4 text-primary-500 hover:underline">Voir tous ses livres</a>
+                    </div>
+
+                    <!-- Related Books -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-h4 text-dark-900 mb-4">Livres similaires</h3>
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="w-12 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="book" class="w-4 h-4 text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-p4 font-medium text-dark-900 mb-1">La Peste</h4>
+                                    <p class="text-p5 text-dark-500 mb-1">Albert Camus</p>
+                                    <p class="text-p4 font-medium text-primary-500">16,99 €</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-12 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="book" class="w-4 h-4 text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-p4 font-medium text-dark-900 mb-1">La Nausée</h4>
+                                    <p class="text-p5 text-dark-500 mb-1">Jean-Paul Sartre</p>
+                                    <p class="text-p4 font-medium text-primary-500">14,99 €</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="w-12 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="book" class="w-4 h-4 text-white"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-p4 font-medium text-dark-900 mb-1">Le Mythe de Sisyphe</h4>
+                                    <p class="text-p5 text-dark-500 mb-1">Albert Camus</p>
+                                    <p class="text-p4 font-medium text-primary-500">13,99 €</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Store Info -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h3 class="text-h4 text-dark-900 mb-4">Boutique</h3>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="store" class="w-6 h-6 text-primary-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-p3 font-semibold text-dark-900">Librairie Centrale</h4>
+                                <div class="flex items-center gap-1">
+                                    <div class="flex text-yellow-400">
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4"></i>
+                                    </div>
+                                    <span class="text-p5 text-dark-500">(4.3)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-p4 text-dark-600 mb-4">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-dark-400"></i>
+                                <span>Paris, France</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="book-open" class="w-4 h-4 text-dark-400"></i>
+                                <span>2,847 livres</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-dark-400"></i>
+                                <span>Membre depuis 2019</span>
+                            </div>
+                        </div>
+                        <a href="boutique-profil.html" class="btn-md btn-outline-primary w-full">
+                            Voir la boutique
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="logo mb-5">
+                        <div class="logo-icon">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-h4 logo-text">BookStore</span>
+                    </div>
+                    <p class="company-description">
+                        Votre librairie en ligne<br>
+                        pour tous vos livres favoris
+                    </p>
+                    <div class="contact-info space-y-2">
+                        <p class="phone">+(84) - 1800 - 4635</p>
+                        <p class="email">hello@BookStore.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="accueil.html">Accueil</a></li>
+                        <li><a href="livres.html">Livres</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-section">
+                    <h4>Catégories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Non-fiction</a></li>
+                        <li><a href="#">Sciences</a></li>
+                        <li><a href="#">Histoire</a></li>
+                        <li><a href="#">Art</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 BookStore. Tous droits réservés.</p>
+                </div>
+                <div class="payment-methods">
+                    <span class="text-p5 text-dark-500">Paiements sécurisés</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
