@@ -4,15 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI System Demo - Template Librairie</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link href="./dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-dark-50 font-sora">
-    <div class="container mx-auto px-4 py-8">
-        <!-- Header -->
-        <header class="mb-12">
-            <h1 class="text-h1 text-dark-900 mb-4">Système de Design UI</h1>
-            <p class="text-p1 text-dark-700">Démonstration des composants et styles définis dans le système de design.</p>
-        </header>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <div class="contact-info">
+                    <span>
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +(84) - 1800 - 4635
+                    </span>
+                    <span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        demo@designsystem.com
+                    </span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="social-icon">
+                        <i data-lucide="bell" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header shadow-lg">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex items-center justify-between py-5">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="palette" class="w-6 h-6"></i>
+                    </div>
+                    <span class="logo-text">Design System</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="flex items-center">
+                    <ul class="flex gap-10">
+                        <li><a href="index.html" class="nav-link">BookStore</a></li>
+                        <li><a href="demo.html" class="nav-link text-primary-500">UI Demo</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div class="user-actions">
+                        <button class="user-btn">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </button>
+                        <button class="wishlist-btn">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <div class="container mx-auto px-4 py-8">
+            <!-- Header -->
+            <header class="mb-12">
+                <h1 class="text-h1 text-dark-900 mb-4">Système de Design UI</h1>
+                <p class="text-p1 text-dark-700">Démonstration des composants et styles définis dans le système de design.</p>
+            </header>
 
         <!-- Color Palette Section -->
         <section class="mb-12">
@@ -255,6 +324,100 @@
                 </table>
             </div>
         </section>
-    </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="logo mb-5">
+                        <div class="logo-icon">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-h4 logo-text">Design System</span>
+                    </div>
+                    <p class="company-description">
+                        Système de design unifié<br>
+                        pour vos projets web
+                    </p>
+                    <div class="contact-info space-y-2">
+                        <p class="phone">+(84) - 1800 - 4635</p>
+                        <p class="email">demo@designsystem.com</p>
+                    </div>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Composants</a></li>
+                        <li><a href="#">Tokens</a></li>
+                        <li><a href="#">Icônes</a></li>
+                        <li><a href="#">Guidelines</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Communauté</a></li>
+                        <li><a href="#">Bug Report</a></li>
+                        <li><a href="#">Feature Request</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p class="subscribe-text">
+                        Restez informé des mises à jour du design system.
+                    </p>
+                    <div class="flex rounded-full overflow-hidden bg-dark-50">
+                        <input type="email" placeholder="Email address" class="flex-1 px-5 py-3 text-p4 border-none outline-none bg-transparent">
+                        <button class="bg-primary-500 text-white px-6 py-3 text-p4 font-semibold hover:bg-primary-500/90 transition-colors">
+                            S'abonner
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">CSS</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">JS</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">HTML</div>
+                    <div class="bg-dark-50 text-dark-900 px-3 py-2 rounded text-p5 font-semibold min-w-[50px] text-center">SASS</div>
+                </div>
+                <p class="copyright">Copyright © 2023 Design System. All rights reserved</p>
+                <div class="social-links">
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="figma" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-dark-500 hover:text-primary-500 transition-colors">
+                        <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
