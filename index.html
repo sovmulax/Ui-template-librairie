@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Template Librairie - Navigation</title>
+    <link href="./src/input.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">UI Template Librairie</h1>
+            <p class="text-lg text-gray-600">Navigation des pages du template</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Section Authentification -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    Pages d'Authentification
+                </h2>
+                <ul class="space-y-3">
+                    <li><a href="./pages/auth/connexion.html" class="text-blue-600 hover:text-blue-800 hover:underline">Connexion</a></li>
+                    <li><a href="./pages/auth/inscription.html" class="text-blue-600 hover:text-blue-800 hover:underline">Inscription</a></li>
+                    <li><a href="./pages/auth/mot-de-passe-oublie.html" class="text-blue-600 hover:text-blue-800 hover:underline">Mot de passe oublié</a></li>
+                    <li><a href="./pages/auth/reinitialisation-mot-de-passe.html" class="text-blue-600 hover:text-blue-800 hover:underline">Réinitialisation mot de passe</a></li>
+                </ul>
+            </div>
+
+            <!-- Section Client -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                    Pages Client
+                </h2>
+                <ul class="space-y-3">
+                    <li><a href="./pages/client/accueil.html" class="text-blue-600 hover:text-blue-800 hover:underline">Accueil</a></li>
+                    <li><a href="./pages/client/livres.html" class="text-blue-600 hover:text-blue-800 hover:underline">Liste des livres</a></li>
+                    <li><a href="./pages/client/livre-detail.html" class="text-blue-600 hover:text-blue-800 hover:underline">Détail d'un livre</a></li>
+                    <li><a href="./pages/client/panier.html" class="text-blue-600 hover:text-blue-800 hover:underline">Panier</a></li>
+                    <li><a href="./pages/client/favoris.html" class="text-blue-600 hover:text-blue-800 hover:underline">Favoris</a></li>
+                    <li><a href="./pages/client/blog.html" class="text-blue-600 hover:text-blue-800 hover:underline">Blog</a></li>
+                    <li><a href="./pages/client/blog-article.html" class="text-blue-600 hover:text-blue-800 hover:underline">Article de blog</a></li>
+                    <li><a href="./pages/client/profil-client.html" class="text-blue-600 hover:text-blue-800 hover:underline">Profil client</a></li>
+                    <li><a href="./pages/client/profil-boutique.html" class="text-blue-600 hover:text-blue-800 hover:underline">Profil boutique</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Instructions de développement -->
+        <div class="mt-12 bg-blue-50 rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-blue-800 mb-3">Instructions de développement</h2>
+            <div class="text-blue-700">
+                <p class="mb-2"><strong>Démarrer le serveur de développement :</strong></p>
+                <code class="bg-blue-100 px-2 py-1 rounded">npm run dev</code>
+                
+                <p class="mb-2 mt-4"><strong>Builder le projet :</strong></p>
+                <code class="bg-blue-100 px-2 py-1 rounded">npm run build</code>
+                
+                <p class="mb-2 mt-4"><strong>Prévisualiser le build :</strong></p>
+                <code class="bg-blue-100 px-2 py-1 rounded">npm run preview</code>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

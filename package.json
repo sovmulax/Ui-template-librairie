@@ -4,8 +4,11 @@
   "description": "Template de librairie en ligne avec TailwindCSS",
   "main": "index.html",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "css:dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "css:build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
   },
   "keywords": [
     "tailwindcss",
@@ -17,6 +20,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.3.0",
+    "vite": "^7.1.7"
   }
 }
