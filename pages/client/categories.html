@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catégories - BookStore</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+
+<body class="font-sora bg-dark-50">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <div class="contact-info">
+                    <span>
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +(84) - 1800 - 4635
+                    </span>
+                    <span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        info@BookStore.com
+                    </span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="social-icon">
+                        <i data-lucide="bell" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header shadow-lg">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex items-center justify-between py-5">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <span class="logo-text">BookStore</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex flex-1 max-w-2xl mx-8">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search products..." class="search-input">
+                        <select class="category-select" id="searchCategorySelect">
+                            <option>All category</option>
+                            <option>Fiction</option>
+                            <option>Non-Fiction</option>
+                            <option>Science</option>
+                        </select>
+                        <button class="search-btn">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="store-locator">
+                        <i data-lucide="heart" class="w-4 h-4"></i>
+                        Find a book store
+                    </button>
+                    <div class="user-actions">
+                        <a href="profil-client.html" class="user-btn">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </a>
+                        <a href="favoris.html" class="wishlist-btn">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </a>
+                        <button class="cart-btn">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span class="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <div class="flex items-center justify-between py-4">
+                    <div class="flex items-center gap-4">
+                        <button class="btn-md btn-primary flex items-center gap-2 rounded-full">
+                            <i data-lucide="grid-3x3" class="w-4 h-4"></i>
+                            Categories
+                        </button>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="accueil.html" class="nav-link">Home</a></li>
+                        <li><a href="livres.html" class="nav-link">Products</a></li>
+                        <li><a href="categories.html" class="nav-link text-primary-500">Categories</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+
+                    </ul>
+                    <div class="support-info">
+                        <span class="text-p3 font-semibold text-primary-500 flex items-center mr-2">
+                            <i data-lucide="users" class="w-4 h-4"></i>
+                            17,200 Visiteurs
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-dark-200 py-4">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <ol class="flex items-center gap-2 text-p4">
+                <li><a href="accueil.html" class="text-primary-500 hover:underline">Accueil</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4 text-dark-400"></i></li>
+                <li class="text-dark-900 font-medium" id="breadcrumb-category">Catégories</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12 bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="text-center">
+                <h1 class="text-h1 mb-4" id="category-title">Explorez nos catégories</h1>
+                <p class="text-p1 opacity-90 mb-6" id="category-description">Découvrez des milliers de livres organisés
+                    par thèmes</p>
+                <div class="flex justify-center">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 flex items-center gap-3">
+                        <i data-lucide="book" class="w-5 h-5"></i>
+                        <span class="text-p3 font-medium" id="books-count">0 livres disponibles</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="py-16 bg-white" id="categories-overview">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <h2 class="text-h2 text-dark-900 mb-12 text-center">Toutes les catégories</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Fiction Category -->
+                <div class="category-card bg-primary-50 border-2 border-primary-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="fiction">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="bg-primary-200 text-primary-700 rounded-full px-3 py-1 text-p4 font-semibold">234
+                            livres</span>
+                    </div>
+                    <h3 class="text-h4 text-primary-700 mb-2">Fiction</h3>
+                </div>
+
+                <!-- Sciences Category -->
+                <div class="category-card bg-blue-50 border-2 border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="sciences">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="atom" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="bg-blue-200 text-blue-700 rounded-full px-3 py-1 text-p4 font-semibold">89
+                            livres</span>
+                    </div>
+                    <h3 class="text-h4 text-blue-700 mb-2">Sciences</h3>
+                </div>
+
+                <!-- Histoire Category -->
+                <div class="category-card bg-orange-50 border-2 border-orange-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="histoire">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="bg-orange-200 text-orange-700 rounded-full px-3 py-1 text-p4 font-semibold">67
+                            livres</span>
+                    </div>
+                    <h3 class="text-h4 text-orange-700 mb-2">Histoire</h3>
+                </div>
+
+                <!-- Art Category -->
+                <div class="category-card bg-purple-50 border-2 border-purple-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="art">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="palette" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="bg-purple-200 text-purple-700 rounded-full px-3 py-1 text-p4 font-semibold">45
+                            livres</span>
+                    </div>
+                    <h3 class="text-h4 text-purple-700 mb-2">Art & Design</h3>
+                </div>
+
+                <!-- Non-Fiction Category -->
+                <div class="category-card bg-secondary-50 border-2 border-secondary-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="non-fiction">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-secondary-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span
+                            class="bg-secondary-200 text-secondary-700 rounded-full px-3 py-1 text-p4 font-semibold">156
+                            livres</span>
+                    </div>
+                    <h3 class="text-h4 text-secondary-700 mb-2">Non-Fiction</h3>
+                </div>
+
+                <!-- Fantasy Category -->
+                <div class="category-card bg-pink-50 border-2 border-pink-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="fantasy">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="wand-2" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="bg-pink-200 text-pink-700 rounded-full px-3 py-1 text-p4 font-semibold">78
+                            livres</span>
+                    </div>
+                    <h3 class="text-h4 text-pink-700 mb-2">Fantasy</h3>
+                </div>
+
+                <!-- Biographies Category -->
+                <div class="category-card bg-green-50 border-2 border-green-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="biographie">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="user-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="bg-green-200 text-green-700 rounded-full px-3 py-1 text-p4 font-semibold">52
+                            livres</span>
+                    </div>
+                </div>
+
+                <!-- Jeunesse Category -->
+                <div class="category-card bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    data-category="jeunesse">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+                            <i data-lucide="baby" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="bg-yellow-200 text-yellow-700 rounded-full px-3 py-1 text-p4 font-semibold">134
+                            livres</span>
+                    </div>
+                    <h3 class="text-h4 text-yellow-700 mb-2">Jeunesse</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="logo mb-5">
+                        <div class="logo-icon">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-h4 logo-text">BookStore</span>
+                    </div>
+                    <p class="company-description">
+                        Votre librairie en ligne<br>
+                        pour tous vos livres favoris
+                    </p>
+                    <div class="contact-info space-y-2">
+                        <p class="phone">+(84) - 1800 - 4635</p>
+                        <p class="email">hello@BookStore.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="accueil.html">Accueil</a></li>
+                        <li><a href="livres.html">Livres</a></li>
+                        <li><a href="categories.html">Catégories</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-section">
+                    <h4>Catégories</h4>
+                    <ul class="footer-links">
+                        <li><a href="categorie-details.html?category=fiction">Fiction</a></li>
+                        <li><a href="categorie-details.html?category=non-fiction">Non-fiction</a></li>
+                        <li><a href="categorie-details.html?category=sciences">Sciences</a></li>
+                        <li><a href="categorie-details.html?category=histoire">Histoire</a></li>
+                        <li><a href="categorie-details.html?category=art">Art</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 BookStore. Tous droits réservés.</p>
+                </div>
+                <div class="payment-methods">
+                    <span class="text-p5 text-dark-500">Paiements sécurisés</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Sample books data by category
+        const booksByCategory = {
+            fiction: [
+                { id: 1, title: "L'Étranger", author: "Albert Camus", price: "12,99 €", rating: 4.2, cover: "from-blue-500 to-purple-600", store: "Librairie Centrale" },
+                { id: 2, title: "1984", author: "George Orwell", price: "15,99 €", rating: 4.8, cover: "from-green-500 to-teal-600", store: "Books & More" },
+                { id: 3, title: "Le Nom du Vent", author: "Patrick Rothfuss", price: "18,99 €", rating: 4.5, cover: "from-red-500 to-pink-600", store: "Le Petit Libraire" },
+                { id: 4, title: "Les Misérables", author: "Victor Hugo", price: "25,99 €", rating: 4.9, cover: "from-purple-500 to-indigo-600", store: "Books & More" },
+                { id: 5, title: "Le Petit Prince", author: "Antoine de Saint-Exupéry", price: "12,99 €", rating: 4.9, cover: "from-slate-500 to-gray-600", store: "Books & More" },
+                { id: 6, title: "Madame Bovary", author: "Gustave Flaubert", price: "16,99 €", rating: 4.3, cover: "from-rose-500 to-pink-600", store: "Librairie Centrale" },
+                { id: 7, title: "Le Rouge et le Noir", author: "Stendhal", price: "18,99 €", rating: 4.1, cover: "from-red-600 to-orange-600", store: "Le Petit Libraire" },
+                { id: 8, title: "Crime et Châtiment", author: "Fiodor Dostoïevski", price: "22,99 €", rating: 4.6, cover: "from-gray-600 to-slate-700", store: "Books & More" }
+            ],
+            sciences: [
+                { id: 9, title: "Sapiens", author: "Yuval Noah Harari", price: "22,99 €", rating: 4.7, cover: "from-yellow-500 to-orange-600", store: "Librairie Centrale" },
+                { id: 10, title: "Une brève histoire du temps", author: "Stephen Hawking", price: "19,99 €", rating: 4.5, cover: "from-blue-600 to-indigo-700", store: "Books & More" },
+                { id: 11, title: "Cosmos", author: "Carl Sagan", price: "24,99 €", rating: 4.8, cover: "from-purple-600 to-indigo-800", store: "Le Petit Libraire" },
+                { id: 12, title: "L'Origine des espèces", author: "Charles Darwin", price: "21,99 €", rating: 4.4, cover: "from-green-600 to-emerald-700", store: "Librairie Centrale" }
+            ],
+            histoire: [
+                { id: 13, title: "Napoléon Bonaparte", author: "Jean Tulard", price: "26,99 €", rating: 4.3, cover: "from-red-600 to-yellow-500", store: "Books & More" },
+                { id: 14, title: "Histoire de France", author: "Jacques Bainville", price: "24,99 €", rating: 4.2, cover: "from-blue-600 to-red-600", store: "Librairie Centrale" },
+                { id: 15, title: "La Grande Guerre", author: "Jean-Baptiste Duroselle", price: "28,99 €", rating: 4.6, cover: "from-gray-600 to-red-700", store: "Le Petit Libraire" },
+                { id: 16, title: "Rome antique", author: "Pierre Grimal", price: "23,99 €", rating: 4.1, cover: "from-yellow-600 to-orange-700", store: "Books & More" }
+            ],
+            art: [
+                { id: 17, title: "Histoire de l'art", author: "Ernst Gombrich", price: "35,99 €", rating: 4.8, cover: "from-purple-500 to-pink-600", store: "Librairie Centrale" },
+                { id: 18, title: "L'Art moderne", author: "Denys Riout", price: "29,99 €", rating: 4.4, cover: "from-indigo-500 to-purple-600", store: "Books & More" },
+                { id: 19, title: "Van Gogh", author: "Ingo Walther", price: "32,99 €", rating: 4.7, cover: "from-yellow-500 to-blue-600", store: "Le Petit Libraire" },
+                { id: 20, title: "Architecture", author: "Jonathan Glancey", price: "38,99 €", rating: 4.5, cover: "from-gray-500 to-blue-600", store: "Librairie Centrale" }
+            ]
+        };
+
+        // Category information
+        const categoryInfo = {
+            fiction: { name: "Fiction", description: "Romans, nouvelles et histoires captivantes", count: 234, icon: "book-open" },
+            sciences: { name: "Sciences", description: "Physique, chimie, biologie et mathématiques", count: 89, icon: "atom" },
+            histoire: { name: "Histoire", description: "Histoire ancienne, moderne et contemporaine", count: 67, icon: "clock" },
+            art: { name: "Art & Design", description: "Peinture, sculpture, design et architecture", count: 45, icon: "palette" },
+            "non-fiction": { name: "Non-Fiction", description: "Essais, biographies et documentaires", count: 156, icon: "graduation-cap" },
+            fantasy: { name: "Fantasy", description: "Magie, dragons et mondes imaginaires", count: 78, icon: "wand-2" },
+            biographie: { name: "Biographies", description: "Vies exceptionnelles et témoignages", count: 52, icon: "user-check" },
+            jeunesse: { name: "Jeunesse", description: "Livres pour enfants et adolescents", count: 134, icon: "baby" }
+        };
+
+        // Generate star rating HTML
+        function generateStarRating(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            let starsHTML = '';
+
+            for (let i = 0; i < fullStars; i++) {
+                starsHTML += '<i data-lucide="star" class="w-4 h-4 fill-current"></i>';
+            }
+
+            if (hasHalfStar) {
+                starsHTML += '<i data-lucide="star" class="w-4 h-4"></i>';
+                for (let i = fullStars + 1; i < 5; i++) {
+                    starsHTML += '<i data-lucide="star" class="w-4 h-4"></i>';
+                }
+            } else {
+                for (let i = fullStars; i < 5; i++) {
+                    starsHTML += '<i data-lucide="star" class="w-4 h-4"></i>';
+                }
+            }
+
+            return starsHTML;
+        }
+
+        // Generate book card HTML
+        function generateBookCard(book) {
+            return `
+                <div class="bg-white border border-dark-200 rounded-xl p-4 hover:shadow-lg transition-shadow group">
+                    <div class="relative mb-4">
+                        <div class="aspect-[3/4] bg-gradient-to-br ${book.cover} rounded-lg flex items-center justify-center">
+                            <i data-lucide="book" class="w-12 h-12 text-white"></i>
+                        </div>
+                        <button class="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-red-50 transition-colors">
+                            <i data-lucide="heart" class="w-4 h-4 text-dark-400 hover:text-red-500"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <h3 class="text-p3 font-semibold text-dark-900 mb-1 group-hover:text-primary-500 transition-colors">
+                            <a href="livre-detail.html">${book.title}</a>
+                        </h3>
+                        <p class="text-p4 text-dark-500 mb-2">${book.author}</p>
+                        <p class="text-p5 text-dark-400 mb-3">${book.store}</p>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex text-yellow-400">
+                                ${generateStarRating(book.rating)}
+                            </div>
+                            <span class="text-p5 text-dark-500">(${book.rating})</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-p3 font-semibold text-primary-500">${book.price}</span>
+                            <button class="btn-sm btn-primary">
+                                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Show books for a specific category
+        function showCategoryBooks(category) {
+            const info = categoryInfo[category];
+            if (!info) return;
+
+            // Update page title and description
+            document.getElementById('category-title').textContent = info.name;
+            document.getElementById('category-description').textContent = info.description;
+            document.getElementById('books-count').textContent = `${info.count} livres disponibles`;
+            document.getElementById('breadcrumb-category').textContent = info.name;
+
+            // Update category books section
+            document.getElementById('category-books-title').textContent = `Livres - ${info.name}`;
+            document.getElementById('category-books-count').textContent = `${info.count} livres trouvés`;
+
+            // Hide categories overview and show books section
+            document.getElementById('categories-overview').style.display = 'none';
+            document.getElementById('books-by-category').style.display = 'block';
+
+            // Generate books grid
+            const books = booksByCategory[category] || [];
+            const booksGrid = document.getElementById('books-grid');
+            booksGrid.innerHTML = books.map(generateBookCard).join('');
+
+            // Update filter buttons
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+
+            // Re-initialize lucide icons
+            lucide.createIcons();
+
+            // Update URL
+            const url = new URL(window.location);
+            url.searchParams.set('category', category);
+            window.history.pushState({}, '', url);
+        }
+
+        // Show all categories
+        function showAllCategories() {
+            document.getElementById('category-title').textContent = 'Explorez nos catégories';
+            document.getElementById('category-description').textContent = 'Découvrez des milliers de livres organisés par thèmes';
+            document.getElementById('books-count').textContent = `${Object.values(categoryInfo).reduce((sum, cat) => sum + cat.count, 0)} livres disponibles`;
+            document.getElementById('breadcrumb-category').textContent = 'Catégories';
+
+            document.getElementById('categories-overview').style.display = 'block';
+            document.getElementById('books-by-category').style.display = 'none';
+
+            // Update filter buttons
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('[data-category="all"]').classList.add('active');
+
+            // Update URL
+            const url = new URL(window.location);
+            url.searchParams.delete('category');
+            window.history.pushState({}, '', url);
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            // Category card clicks
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', function () {
+                    const category = this.dataset.category;
+                    // Redirect to dedicated category details page
+                    window.location.href = `categorie-details.html?category=${category}`;
+                });
+            });
+
+            // Filter button clicks
+            document.querySelectorAll('.category-filter-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const category = this.dataset.category;
+                    if (category === 'all') {
+                        showAllCategories();
+                    } else {
+                        showCategoryBooks(category);
+                    }
+                });
+            });
+
+            // Check URL parameters on page load
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            if (category && categoryInfo[category]) {
+                showCategoryBooks(category);
+            }
+        });
+
+        // Custom styles for category filter buttons
+        const style = document.createElement('style');
+        style.textContent = `
+            .category-filter-btn {
+                padding: 8px 16px;
+                border-radius: 20px;
+                background: transparent;
+                border: none;
+                color: #6B7280;
+                font-size: 14px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                transition: all 0.2s;
+                cursor: pointer;
+            }
+            
+            .category-filter-btn:hover {
+                background: rgba(139, 69, 19, 0.1);
+                color: #8B4513;
+            }
+            
+            .category-filter-btn.active {
+                background: #8B4513;
+                color: white;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+
+</html>

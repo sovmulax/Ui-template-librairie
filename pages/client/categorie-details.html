@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiction - BookStore</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="../../dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sora bg-dark-50">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex justify-between items-center">
+                <div class="contact-info">
+                    <span>
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        +(84) - 1800 - 4635
+                    </span>
+                    <span>
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        info@BookStore.com
+                    </span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="social-icon">
+                        <i data-lucide="bell" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header shadow-lg">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex items-center justify-between py-5">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <span class="logo-text">BookStore</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex flex-1 max-w-2xl mx-8">
+                    <div class="search-container">
+                        <input type="text" placeholder="Rechercher dans cette catégorie..." class="search-input" id="category-search">
+                        <select class="category-select" id="categorySelect">
+                            <option value="fiction">Fiction</option>
+                            <option value="sciences">Sciences</option>
+                            <option value="histoire">Histoire</option>
+                            <option value="art">Art</option>
+                            <option value="non-fiction">Non-Fiction</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="biographie">Biographies</option>
+                            <option value="jeunesse">Jeunesse</option>
+                        </select>
+                        <button class="search-btn" onclick="searchInCategory()">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="store-locator">
+                        <i data-lucide="heart" class="w-4 h-4"></i>
+                        Find a book store
+                    </button>
+                    <div class="user-actions">
+                        <a href="profil-client.html" class="user-btn">
+                            <i data-lucide="user" class="w-5 h-5"></i>
+                        </a>
+                        <a href="favoris.html" class="wishlist-btn">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </a>
+                        <button class="cart-btn">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span class="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+                <div class="flex items-center justify-between py-4">
+                    <div class="relative categories-dropdown">
+                        <button class="btn-md btn-primary flex items-center gap-2 rounded-full categories-toggle">
+                            <i data-lucide="grid-3x3" class="w-4 h-4"></i>
+                            Categories
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="categories-menu absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg border border-dark-200 p-4 min-w-[300px] z-50 hidden">
+                            <div class="grid grid-cols-2 gap-3">
+                                <a href="categorie-details.html?category=fiction" class="category-menu-item">
+                                    <i data-lucide="book-open" class="w-4 h-4 text-primary-500"></i>
+                                    <span>Fiction</span>
+                                    <span class="count">234</span>
+                                </a>
+                                <a href="categorie-details.html?category=sciences" class="category-menu-item">
+                                    <i data-lucide="atom" class="w-4 h-4 text-blue-500"></i>
+                                    <span>Sciences</span>
+                                    <span class="count">89</span>
+                                </a>
+                                <a href="categorie-details.html?category=histoire" class="category-menu-item">
+                                    <i data-lucide="clock" class="w-4 h-4 text-orange-500"></i>
+                                    <span>Histoire</span>
+                                    <span class="count">67</span>
+                                </a>
+                                <a href="categorie-details.html?category=art" class="category-menu-item">
+                                    <i data-lucide="palette" class="w-4 h-4 text-purple-500"></i>
+                                    <span>Art</span>
+                                    <span class="count">45</span>
+                                </a>
+                                <a href="categorie-details.html?category=fantasy" class="category-menu-item">
+                                    <i data-lucide="wand-2" class="w-4 h-4 text-pink-500"></i>
+                                    <span>Fantasy</span>
+                                    <span class="count">78</span>
+                                </a>
+                                <a href="categorie-details.html?category=jeunesse" class="category-menu-item">
+                                    <i data-lucide="baby" class="w-4 h-4 text-yellow-500"></i>
+                                    <span>Jeunesse</span>
+                                    <span class="count">134</span>
+                                </a>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-dark-200">
+                                <a href="categories.html" class="text-p4 text-primary-500 hover:underline font-medium">
+                                    Voir toutes les catégories →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="accueil.html" class="nav-link">Home</a></li>
+                        <li><a href="livres.html" class="nav-link">Products</a></li>
+                        <li><a href="categories.html" class="nav-link text-primary-500">Categories</a></li>
+                        <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    </ul>
+                    <div class="support-info">
+                        <span class="text-p3 font-semibold text-primary-500 flex items-center mr-2">
+                            <i data-lucide="users" class="w-4 h-4"></i>
+                            17,200 Visiteurs
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-white border-b border-dark-200 py-4">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <ol class="flex items-center gap-2 text-p4">
+                <li><a href="accueil.html" class="text-primary-500 hover:underline">Accueil</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4 text-dark-400"></i></li>
+                <li><a href="categories.html" class="text-primary-500 hover:underline">Catégories</a></li>
+                <li><i data-lucide="chevron-right" class="w-4 h-4 text-dark-400"></i></li>
+                <li class="text-dark-900 font-medium" id="breadcrumb-category">Fiction</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Category Hero Section -->
+    <section class="py-16 relative overflow-hidden" id="category-hero">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-600" id="hero-background"></div>
+        <div class="container mx-auto px-5 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center" id="category-icon-container">
+                            <i data-lucide="book-open" class="w-8 h-8" id="category-icon"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-h1 mb-2" id="category-name">Fiction</h1>
+                            <div class="flex items-center gap-4">
+                                <span class="bg-white/20 rounded-full px-4 py-2 text-p3 font-medium" id="books-count">234 livres</span>
+                                <span class="bg-white/20 rounded-full px-4 py-2 text-p3 font-medium" id="avg-rating">★ 4.5 moyenne</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub-categories Filter -->
+    <section class="py-8 bg-white border-b border-dark-200">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="flex items-center gap-4 overflow-x-auto pb-2">
+                <span class="text-p3 font-semibold text-dark-900 whitespace-nowrap">Filtrer par :</span>
+                <div class="flex gap-2 min-w-max" id="subcategory-filters">
+                    <button class="subcategory-btn active" data-filter="all">Tout</button>
+                    <button class="subcategory-btn" data-filter="roman">Roman</button>
+                    <button class="subcategory-btn" data-filter="nouvelle">Nouvelle</button>
+                    <button class="subcategory-btn" data-filter="thriller">Thriller</button>
+                    <button class="subcategory-btn" data-filter="policier">Policier</button>
+                    <button class="subcategory-btn" data-filter="historique">Historique</button>
+                    <button class="subcategory-btn" data-filter="contemporain">Contemporain</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-8">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="grid grid-cols-12 gap-8">
+                <!-- Filters Sidebar -->
+
+
+                <!-- Books Grid -->
+                <div class="col-span-12">
+                    <!-- Header and Sorting -->
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h2 class="text-h2 text-dark-900 mb-2" id="results-title">Livres Fiction</h2>
+                            <p class="text-p3 text-dark-500" id="results-count">234 livres trouvés</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <select class="input-md" id="sort-select" onchange="sortBooks()">
+                                <option value="popularity">Popularité</option>
+                                <option value="price-asc">Prix croissant</option>
+                                <option value="price-desc">Prix décroissant</option>
+                                <option value="rating">Note</option>
+                                <option value="newest">Nouveautés</option>
+                                <option value="alphabetical">Alphabétique</option>
+                            </select>
+                            <div class="flex border border-dark-200 rounded-lg">
+                                <button class="p-2 bg-primary-500 text-white" id="grid-view">
+                                    <i data-lucide="grid-3x3" class="w-4 h-4"></i>
+                                </button>
+                                <button class="p-2 hover:bg-dark-50" id="list-view" onclick="toggleView()">
+                                    <i data-lucide="list" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Books Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8" id="books-grid">
+                        <!-- Books will be populated here by JavaScript -->
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="text-center mb-8">
+                        <button class="btn-md btn-outline-primary" id="load-more-btn" onclick="loadMoreBooks()">
+                            <i data-lucide="plus" class="w-4 h-4"></i>
+                            Charger plus de livres
+                        </button>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="flex justify-center">
+                        <div class="flex items-center gap-2" id="pagination">
+                            <button class="btn-md btn-outline-primary" id="prev-page" onclick="previousPage()">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                Précédent
+                            </button>
+                            <div class="flex gap-1" id="page-numbers">
+                                <!-- Page numbers will be populated by JavaScript -->
+                            </div>
+                            <button class="btn-md btn-outline-primary" id="next-page" onclick="nextPage()">
+                                Suivant
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto px-5 max-w-7xl">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="logo mb-5">
+                        <div class="logo-icon">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-h4 logo-text">BookStore</span>
+                    </div>
+                    <p class="company-description">
+                        Votre librairie en ligne<br>
+                        pour tous vos livres favoris
+                    </p>
+                    <div class="contact-info space-y-2">
+                        <p class="phone">+(84) - 1800 - 4635</p>
+                        <p class="email">hello@BookStore.com</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="accueil.html">Accueil</a></li>
+                        <li><a href="livres.html">Livres</a></li>
+                        <li><a href="categories.html">Catégories</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer-section">
+                    <h4>Catégories</h4>
+                    <ul class="footer-links">
+                        <li><a href="categorie-details.html?category=fiction">Fiction</a></li>
+                        <li><a href="categorie-details.html?category=non-fiction">Non-fiction</a></li>
+                        <li><a href="categorie-details.html?category=sciences">Sciences</a></li>
+                        <li><a href="categorie-details.html?category=histoire">Histoire</a></li>
+                        <li><a href="categorie-details.html?category=art">Art</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 BookStore. Tous droits réservés.</p>
+                </div>
+                <div class="payment-methods">
+                    <span class="text-p5 text-dark-500">Paiements sécurisés</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Category configurations
+        const categoryConfigs = {
+            fiction: {
+                name: "Fiction",
+                description: "Plongez dans l'univers captivant de la fiction avec notre collection de romans, nouvelles et histoires qui vous transporteront dans d'autres mondes.",
+                icon: "book-open",
+                color: "primary",
+                gradient: "from-primary-500 to-primary-600",
+                subcategories: ["roman", "nouvelle", "thriller", "policier", "historique", "contemporain"],
+                authors: ["Albert Camus", "George Orwell", "Victor Hugo", "Gustave Flaubert", "Stendhal"],
+                publishers: ["Gallimard", "Seuil", "Flammarion", "Grasset"],
+                related: ["fantasy", "thriller", "histoire"]
+            },
+            sciences: {
+                name: "Sciences",
+                description: "Explorez les mystères de l'univers avec nos ouvrages scientifiques couvrant la physique, la biologie, la chimie et les mathématiques.",
+                icon: "atom",
+                color: "blue",
+                gradient: "from-blue-500 to-blue-600",
+                subcategories: ["physique", "biologie", "chimie", "mathematiques", "astronomie", "medecine"],
+                authors: ["Stephen Hawking", "Carl Sagan", "Marie Curie", "Albert Einstein"],
+                publishers: ["Dunod", "De Boeck", "Masson", "Lavoisier"],
+                related: ["non-fiction", "histoire", "art"]
+            },
+            histoire: {
+                name: "Histoire",
+                description: "Découvrez les grands événements qui ont façonné notre monde, de l'Antiquité à nos jours.",
+                icon: "clock",
+                color: "orange",
+                gradient: "from-orange-500 to-orange-600",
+                subcategories: ["antiquite", "moyen-age", "moderne", "contemporaine", "guerre", "biographie"],
+                authors: ["Jean Tulard", "Jacques Bainville", "Pierre Grimal", "Fernand Braudel"],
+                publishers: ["Perrin", "Fayard", "Tallandier", "Belin"],
+                related: ["biographie", "art", "non-fiction"]
+            }
+        };
+
+        // Sample books data
+        const booksData = {
+            fiction: [
+                { id: 1, title: "L'Étranger", author: "Albert Camus", price: "12,99 €", rating: 4.2, cover: "from-blue-500 to-purple-600", publisher: "Gallimard", subcategory: "roman", year: 1942 },
+                { id: 2, title: "1984", author: "George Orwell", price: "15,99 €", rating: 4.8, cover: "from-green-500 to-teal-600", publisher: "Seuil", subcategory: "thriller", year: 1949 },
+                { id: 3, title: "Le Nom du Vent", author: "Patrick Rothfuss", price: "18,99 €", rating: 4.5, cover: "from-red-500 to-pink-600", publisher: "Flammarion", subcategory: "fantasy", year: 2007 },
+                { id: 4, title: "Les Misérables", author: "Victor Hugo", price: "25,99 €", rating: 4.9, cover: "from-purple-500 to-indigo-600", publisher: "Grasset", subcategory: "historique", year: 1862 },
+                { id: 5, title: "Le Petit Prince", author: "Antoine de Saint-Exupéry", price: "12,99 €", rating: 4.9, cover: "from-slate-500 to-gray-600", publisher: "Gallimard", subcategory: "conte", year: 1943 },
+                { id: 6, title: "Madame Bovary", author: "Gustave Flaubert", price: "16,99 €", rating: 4.3, cover: "from-rose-500 to-pink-600", publisher: "Gallimard", subcategory: "roman", year: 1857 },
+                { id: 7, title: "Le Rouge et le Noir", author: "Stendhal", price: "18,99 €", rating: 4.1, cover: "from-red-600 to-orange-600", publisher: "Seuil", subcategory: "roman", year: 1830 },
+                { id: 8, title: "Crime et Châtiment", author: "Fiodor Dostoïevski", price: "22,99 €", rating: 4.6, cover: "from-gray-600 to-slate-700", publisher: "Flammarion", subcategory: "roman", year: 1866 }
+            ]
+        };
+
+        // Current state
+        let currentCategory = 'fiction';
+        let currentFilter = 'all';
+        let currentSort = 'popularity';
+        let currentPage = 1;
+        let itemsPerPage = 12;
+        let allBooks = [];
+        let filteredBooks = [];
+        let isFavorite = false;
+
+        // Initialize page
+        function initializePage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category') || 'fiction';
+            currentCategory = category;
+            
+            if (categoryConfigs[category]) {
+                setupCategoryPage(category);
+                loadBooks();
+                setupEventListeners();
+            }
+        }
+
+        // Setup category-specific content
+        function setupCategoryPage(category) {
+            const config = categoryConfigs[category];
+            if (!config) return;
+
+            // Update page title
+            document.title = `${config.name} - BookStore`;
+            
+            // Update breadcrumb
+            document.getElementById('breadcrumb-category').textContent = config.name;
+            
+            // Update hero section
+            document.getElementById('category-name').textContent = config.name;
+            document.getElementById('category-description').textContent = config.description;
+            document.getElementById('category-icon').setAttribute('data-lucide', config.icon);
+            
+            // Update hero background
+            const heroBackground = document.getElementById('hero-background');
+            heroBackground.className = `absolute inset-0 bg-gradient-to-r ${config.gradient}`;
+            
+            // Update category select
+            document.getElementById('categorySelect').value = category;
+            
+            // Setup subcategory filters
+            setupSubcategoryFilters(config.subcategories);
+            
+            // Setup sidebar filters
+            setupSidebarFilters(config);
+            
+            // Update results title
+            document.getElementById('results-title').textContent = `Livres ${config.name}`;
+            
+            // Re-initialize lucide icons
+            lucide.createIcons();
+        }
+
+        // Setup subcategory filters
+        function setupSubcategoryFilters(subcategories) {
+            const container = document.getElementById('subcategory-filters');
+            container.innerHTML = '<button class="subcategory-btn active" data-filter="all">Tout</button>';
+            
+            subcategories.forEach(sub => {
+                const btn = document.createElement('button');
+                btn.className = 'subcategory-btn';
+                btn.setAttribute('data-filter', sub);
+                btn.textContent = sub.charAt(0).toUpperCase() + sub.slice(1);
+                container.appendChild(btn);
+            });
+        }
+
+        // Setup sidebar filters
+        function setupSidebarFilters(config) {
+            // Authors filter
+            const authorsContainer = document.getElementById('authors-filter');
+            authorsContainer.innerHTML = '';
+            config.authors.forEach((author, index) => {
+                if (index < 5) { // Show first 5 authors
+                    const label = document.createElement('label');
+                    label.className = 'flex items-center gap-2 cursor-pointer';
+                    label.innerHTML = `
+                        <input type="checkbox" class="rounded" value="${author}">
+                        <span class="text-p4 text-dark-700">${author}</span>
+                    `;
+                    authorsContainer.appendChild(label);
+                }
+            });
+            
+            // Publishers filter
+            const publishersContainer = document.getElementById('publishers-filter');
+            publishersContainer.innerHTML = '';
+            config.publishers.forEach(publisher => {
+                const label = document.createElement('label');
+                label.className = 'flex items-center gap-2 cursor-pointer';
+                label.innerHTML = `
+                    <input type="checkbox" class="rounded" value="${publisher}">
+                    <span class="text-p4 text-dark-700">${publisher}</span>
+                `;
+                publishersContainer.appendChild(label);
+            });
+        }
+
+        // Load books data
+        function loadBooks() {
+            allBooks = booksData[currentCategory] || [];
+            filteredBooks = [...allBooks];
+            updateBooksDisplay();
+            updateTopBooks();
+            updateStats();
+        }
+
+        // Update top books in hero section
+        function updateTopBooks() {
+            const topBooks = allBooks.slice(0, 3);
+            const container = document.getElementById('top-books');
+            container.innerHTML = topBooks.map((book, index) => `
+                <div class="flex gap-3 items-center">
+                    <div class="flex-shrink-0 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-p4 font-bold">
+                        ${index + 1}
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <h4 class="text-p3 font-semibold text-white truncate">${book.title}</h4>
+                        <p class="text-p4 opacity-80">${book.author}</p>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <span class="text-p4 text-white">${book.rating}</span>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // Update stats
+        function updateStats() {
+            const config = categoryConfigs[currentCategory];
+            const avgRating = (allBooks.reduce((sum, book) => sum + book.rating, 0) / allBooks.length).toFixed(1);
+            
+            document.getElementById('books-count').textContent = `${allBooks.length} livres`;
+            document.getElementById('avg-rating').textContent = `★ ${avgRating} moyenne`;
+            document.getElementById('results-count').textContent = `${filteredBooks.length} livres trouvés`;
+        }
+
+        // Generate book card HTML
+        function generateBookCard(book) {
+            return `
+                <div class="bg-white border border-dark-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 group">
+                    <div class="relative mb-4">
+                        <div class="aspect-[3/4] bg-gradient-to-br ${book.cover} rounded-lg flex items-center justify-center">
+                            <i data-lucide="book" class="w-12 h-12 text-white"></i>
+                        </div>
+                        <button class="absolute top-2 right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm hover:bg-red-50 transition-colors">
+                            <i data-lucide="heart" class="w-4 h-4 text-dark-400 hover:text-red-500"></i>
+                        </button>
+                        <div class="absolute bottom-2 left-2">
+                            <span class="bg-white/80 text-dark-700 rounded-full px-2 py-1 text-p5 font-medium">
+                                ${book.subcategory}
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-p3 font-semibold text-dark-900 mb-1 group-hover:text-primary-500 transition-colors">
+                            <a href="livre-detail.html?id=${book.id}">${book.title}</a>
+                        </h3>
+                        <p class="text-p4 text-dark-500 mb-2">${book.author}</p>
+                        <p class="text-p5 text-dark-400 mb-3">${book.publisher} • ${book.year}</p>
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="flex text-yellow-400">
+                                ${generateStarRating(book.rating)}
+                            </div>
+                            <span class="text-p5 text-dark-500">(${book.rating})</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-p3 font-semibold text-primary-500">${book.price}</span>
+                            <button class="btn-sm btn-primary hover:bg-primary-600 transition-colors">
+                                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Generate star rating
+        function generateStarRating(rating) {
+            const fullStars = Math.floor(rating);
+            let stars = '';
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i data-lucide="star" class="w-4 h-4 fill-current"></i>';
+            }
+            
+            for (let i = fullStars; i < 5; i++) {
+                stars += '<i data-lucide="star" class="w-4 h-4"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Update books display
+        function updateBooksDisplay() {
+            const container = document.getElementById('books-grid');
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const booksToShow = filteredBooks.slice(startIndex, endIndex);
+            
+            container.innerHTML = booksToShow.map(generateBookCard).join('');
+            lucide.createIcons();
+            
+            updatePagination();
+        }
+
+        // Update pagination
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredBooks.length / itemsPerPage);
+            const paginationContainer = document.getElementById('page-numbers');
+            
+            paginationContainer.innerHTML = '';
+            
+            for (let i = 1; i <= Math.min(totalPages, 5); i++) {
+                const button = document.createElement('button');
+                button.className = i === currentPage ? 'btn-md btn-primary' : 'btn-md btn-outline-primary';
+                button.textContent = i;
+                button.onclick = () => goToPage(i);
+                paginationContainer.appendChild(button);
+            }
+            
+            // Update prev/next buttons
+            document.getElementById('prev-page').disabled = currentPage === 1;
+            document.getElementById('next-page').disabled = currentPage === totalPages;
+        }
+
+        // Event listeners
+        function setupEventListeners() {
+            // Categories dropdown functionality
+            const categoriesToggle = document.querySelector('.categories-toggle');
+            const categoriesMenu = document.querySelector('.categories-menu');
+            
+            console.log('Setting up event listeners...', { categoriesToggle, categoriesMenu });
+            
+            if (categoriesToggle && categoriesMenu) {
+                // Remove existing event listeners to avoid duplicates
+                categoriesToggle.removeEventListener('click', toggleCategoriesMenu);
+                categoriesToggle.addEventListener('click', toggleCategoriesMenu);
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', closeCategoriesMenu);
+            } else {
+                console.error('Categories toggle or menu not found:', { categoriesToggle, categoriesMenu });
+            }
+        }
+        
+        // Separate functions for better debugging
+        function toggleCategoriesMenu(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const categoriesMenu = document.querySelector('.categories-menu');
+            if (categoriesMenu) {
+                categoriesMenu.classList.toggle('hidden');
+                console.log('Menu toggled, hidden:', categoriesMenu.classList.contains('hidden'));
+            }
+        }
+        
+        function closeCategoriesMenu(e) {
+            const categoriesToggle = document.querySelector('.categories-toggle');
+            const categoriesMenu = document.querySelector('.categories-menu');
+            
+            if (categoriesToggle && categoriesMenu && 
+                !categoriesToggle.contains(e.target) && 
+                !categoriesMenu.contains(e.target)) {
+                categoriesMenu.classList.add('hidden');
+            }
+            
+            // Subcategory filters
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('subcategory-btn')) {
+                    document.querySelectorAll('.subcategory-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    currentFilter = e.target.dataset.filter;
+                    filterBooks();
+                }
+            });
+            
+            // Category selector in search
+            document.getElementById('categorySelect').addEventListener('change', function() {
+                const newCategory = this.value;
+                if (newCategory !== currentCategory) {
+                    window.location.href = `categorie-details.html?category=${newCategory}`;
+                }
+            });
+        }
+
+        // Filter books
+        function filterBooks() {
+            if (currentFilter === 'all') {
+                filteredBooks = [...allBooks];
+            } else {
+                filteredBooks = allBooks.filter(book => book.subcategory === currentFilter);
+            }
+            
+            currentPage = 1;
+            updateBooksDisplay();
+            updateStats();
+        }
+
+        // Sort books
+        function sortBooks() {
+            const sortValue = document.getElementById('sort-select').value;
+            
+            switch (sortValue) {
+                case 'price-asc':
+                    filteredBooks.sort((a, b) => parseFloat(a.price.replace(',', '.')) - parseFloat(b.price.replace(',', '.')));
+                    break;
+                case 'price-desc':
+                    filteredBooks.sort((a, b) => parseFloat(b.price.replace(',', '.')) - parseFloat(a.price.replace(',', '.')));
+                    break;
+                case 'rating':
+                    filteredBooks.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'alphabetical':
+                    filteredBooks.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                case 'newest':
+                    filteredBooks.sort((a, b) => b.year - a.year);
+                    break;
+                default: // popularity
+                    filteredBooks.sort((a, b) => b.rating - a.rating);
+            }
+            
+            updateBooksDisplay();
+        }
+
+        // Pagination functions
+        function goToPage(page) {
+            currentPage = page;
+            updateBooksDisplay();
+            scrollToBooks();
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                goToPage(currentPage - 1);
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(filteredBooks.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        }
+
+        // Utility functions
+        function scrollToBooks() {
+            document.getElementById('books-grid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleFavoriteCategory() {
+            isFavorite = !isFavorite;
+            const icon = document.getElementById('favorite-icon');
+            const text = document.getElementById('favorite-text');
+            
+            if (isFavorite) {
+                icon.setAttribute('data-lucide', 'heart');
+                icon.classList.add('fill-current');
+                text.textContent = 'Catégorie suivie';
+            } else {
+                icon.setAttribute('data-lucide', 'heart');
+                icon.classList.remove('fill-current');
+                text.textContent = 'Suivre cette catégorie';
+            }
+            
+            lucide.createIcons();
+        }
+
+        function searchInCategory() {
+            const query = document.getElementById('category-search').value.toLowerCase();
+            if (query) {
+                filteredBooks = allBooks.filter(book => 
+                    book.title.toLowerCase().includes(query) || 
+                    book.author.toLowerCase().includes(query)
+                );
+                currentPage = 1;
+                updateBooksDisplay();
+                updateStats();
+            }
+        }
+
+        function clearAllFilters() {
+            // Reset all form inputs
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            document.querySelectorAll('input[type="radio"]').forEach(rb => rb.checked = false);
+            document.getElementById('price-min').value = '';
+            document.getElementById('price-max').value = '';
+            document.getElementById('category-search').value = '';
+            
+            // Reset filters
+            currentFilter = 'all';
+            document.querySelectorAll('.subcategory-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('[data-filter="all"]').classList.add('active');
+            
+            // Reset books display
+            filteredBooks = [...allBooks];
+            currentPage = 1;
+            updateBooksDisplay();
+            updateStats();
+        }
+
+        function loadMoreBooks() {
+            // This would typically load more books from an API
+            // For demo purposes, we'll just show more items per page
+            itemsPerPage += 12;
+            updateBooksDisplay();
+        }
+
+        function toggleView() {
+            // Toggle between grid and list view
+            const gridView = document.getElementById('grid-view');
+            const listView = document.getElementById('list-view');
+            const booksGrid = document.getElementById('books-grid');
+            
+            if (gridView.classList.contains('bg-primary-500')) {
+                // Switch to list view
+                gridView.classList.remove('bg-primary-500', 'text-white');
+                gridView.classList.add('hover:bg-dark-50');
+                listView.classList.add('bg-primary-500', 'text-white');
+                listView.classList.remove('hover:bg-dark-50');
+                booksGrid.className = 'space-y-4 mb-8';
+                
+                // Update book cards for list view (would need different template)
+            } else {
+                // Switch to grid view
+                listView.classList.remove('bg-primary-500', 'text-white');
+                listView.classList.add('hover:bg-dark-50');
+                gridView.classList.add('bg-primary-500', 'text-white');
+                gridView.classList.remove('hover:bg-dark-50');
+                booksGrid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8';
+                
+                updateBooksDisplay();
+            }
+        }
+
+        // Custom styles
+        const styles = `
+            .subcategory-btn {
+                padding: 8px 16px;
+                border-radius: 20px;
+                background: #F3F4F6;
+                border: 1px solid #E5E7EB;
+                color: #6B7280;
+                font-size: 14px;
+                font-weight: 500;
+                transition: all 0.2s;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+            
+            .subcategory-btn:hover {
+                background: #E5E7EB;
+                color: #374151;
+            }
+            
+            .subcategory-btn.active {
+                background: #8B5513;
+                color: white;
+                border-color: #8B5513;
+            }
+            
+            .category-menu-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 12px;
+                border-radius: 8px;
+                text-decoration: none;
+                color: #374151;
+                font-size: 14px;
+                font-weight: 500;
+                transition: all 0.2s;
+            }
+            
+            .category-menu-item:hover {
+                background-color: #F3F4F6;
+                color: #8B5513;
+            }
+            
+            .category-menu-item .count {
+                margin-left: auto;
+                background-color: #F3F4F6;
+                color: #6B7280;
+                padding: 2px 6px;
+                border-radius: 12px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            
+            .category-menu-item:hover .count {
+                background-color: #8B5513;
+                color: white;
+            }
+            
+            /* Ensure dropdown menu is properly displayed */
+            .categories-menu {
+                display: block !important;
+                position: absolute !important;
+                z-index: 1000 !important;
+            }
+            
+            .categories-menu.hidden {
+                display: none !important;
+            }
+            
+            .categories-dropdown {
+                position: relative !important;
+            }
+        `;
+
+        // Add custom styles
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = styles;
+        document.head.appendChild(styleSheet);
+
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePage();
+            
+            // Double-check categories dropdown setup
+            setTimeout(() => {
+                const categoriesToggle = document.querySelector('.categories-toggle');
+                const categoriesMenu = document.querySelector('.categories-menu');
+                console.log('After timeout check:', { categoriesToggle, categoriesMenu });
+                
+                if (categoriesToggle && categoriesMenu && !categoriesToggle.onclick) {
+                    console.log('Reapplying dropdown functionality...');
+                    categoriesToggle.addEventListener('click', toggleCategoriesMenu);
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
