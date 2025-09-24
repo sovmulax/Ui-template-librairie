@@ -85,7 +85,11 @@
   }
   
   .store-locator {
-    @apply bg-transparent border border-dark-200 px-4 py-2 rounded-full text-p5 hover:border-primary-500 hover:text-primary-500 transition-all duration-300 flex items-center gap-2 font-sora;
+    @apply bg-transparent border border-red-500 px-4 py-2 rounded-full text-p5 hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center gap-2 font-sora;
+  }
+
+  .store-locator-active {
+    @apply bg-red-500 text-white
   }
   
   .user-actions {

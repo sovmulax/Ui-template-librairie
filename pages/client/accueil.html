@@ -73,7 +73,7 @@
                 <!-- Header Actions -->
                 <div class="header-actions">
                     <button class="store-locator">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <i data-lucide="heart" class="w-4 h-4"></i>
                         Find a book store
                     </button>
                     <div class="user-actions">
@@ -106,11 +106,10 @@
                         <li><a href="#" class="nav-link">About Us</a></li>
                     </ul>
                     <div class="support-info">
-                        <span class="text-p3 font-semibold text-primary-500 flex items-center gap-2">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            +1 840 - 841 25 69
+                        <span class="text-p3 font-semibold text-primary-500 flex items-center mr-2">
+                            <i data-lucide="users" class="w-4 h-4"></i>
+                            17,200 Visiteurs
                         </span>
-                        <span class="text-p5 text-dark-500">24/7 Support Center</span>
                     </div>
                 </div>
             </nav>
@@ -824,6 +823,14 @@
                 }
                 element.textContent = current.toLocaleString();
             }, 20);
+        }
+
+        // Initialize visitor counter on page load
+        updateVisitorCounter();
+    </script>
+</body>
+
+</html>     }, 20);
         }
 
         // Initialize visitor counter on page load

@@ -165,112 +165,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-3">
-                                <button class="btn-md btn-outline-primary">
-                                    <i data-lucide="heart" class="w-4 h-4"></i>
-                                    Suivre
-                                </button>
-                                <button class="btn-md btn-outline-primary">
-                                    <i data-lucide="share-2" class="w-4 h-4"></i>
-                                    Partager
-                                </button>
-                            </div>
                         </div>
                         
-                        <!-- Store Stats -->
-                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                            <div class="store-stat">
-                                <div class="store-stat-icon bg-blue-100">
-                                    <i data-lucide="book" class="w-5 h-5 text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-p2 font-semibold text-dark-900">156</h3>
-                                    <p class="text-p4 text-dark-500">Livres disponibles</p>
-                                </div>
-                            </div>
-                            <div class="store-stat">
-                                <div class="store-stat-icon bg-green-100">
-                                    <i data-lucide="users" class="w-5 h-5 text-green-600"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-p2 font-semibold text-dark-900">2,847</h3>
-                                    <p class="text-p4 text-dark-500">Followers</p>
-                                </div>
-                            </div>
-                            <div class="store-stat">
-                                <div class="store-stat-icon bg-orange-100">
-                                    <i data-lucide="shopping-cart" class="w-5 h-5 text-orange-600"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-p2 font-semibold text-dark-900">1,234</h3>
-                                    <p class="text-p4 text-dark-500">Ventes ce mois</p>
-                                </div>
-                            </div>
-                            <div class="store-stat">
-                                <div class="store-stat-icon bg-purple-100">
-                                    <i data-lucide="calendar" class="w-5 h-5 text-purple-600"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-p2 font-semibold text-dark-900">3 ans</h3>
-                                    <p class="text-p4 text-dark-500">Sur BookStore</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Store Details -->
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-8">
-                <!-- Store Information -->
-                <div class="lg:col-span-1">
-                    <div class="bg-white rounded-xl p-6 shadow-sm mb-6">
-                        <h3 class="text-h4 text-dark-900 mb-4">Informations de la boutique</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-dark-500 mt-1"></i>
-                                <div>
-                                    <p class="text-p4 text-dark-900 font-medium">Adresse</p>
-                                    <p class="text-p4 text-dark-500">15 Boulevard Saint-Germain<br>75005 Paris, France</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i data-lucide="phone" class="w-4 h-4 text-dark-500 mt-1"></i>
-                                <div>
-                                    <p class="text-p4 text-dark-900 font-medium">Téléphone</p>
-                                    <p class="text-p4 text-dark-500">+33 1 45 67 89 10</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i data-lucide="mail" class="w-4 h-4 text-dark-500 mt-1"></i>
-                                <div>
-                                    <p class="text-p4 text-dark-900 font-medium">Email</p>
-                                    <p class="text-p4 text-dark-500">contact@librairie-moderne.fr</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i data-lucide="clock" class="w-4 h-4 text-dark-500 mt-1"></i>
-                                <div>
-                                    <p class="text-p4 text-dark-900 font-medium">Horaires</p>
-                                    <p class="text-p4 text-dark-500">Lun-Sam: 9h-19h<br>Dim: 10h-18h</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Categories -->
-                    <div class="bg-white rounded-xl p-6 shadow-sm">
-                        <h3 class="text-h4 text-dark-900 mb-4">Spécialités</h3>
-                        <div class="space-y-2">
-                            <span class="category-tag">Littérature française</span>
-                            <span class="category-tag">Romans contemporains</span>
-                            <span class="category-tag">Essais</span>
-                            <span class="category-tag">Poésie</span>
-                            <span class="category-tag">Théâtre</span>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="mb-8">
                 <!-- Books Collection -->
                 <div class="lg:col-span-3">
                     <!-- Filter Bar -->
@@ -513,21 +415,23 @@
                     </div>
 
                     <!-- Pagination -->
-                    <div class="flex justify-center mt-8">
-                        <nav class="flex items-center gap-2">
-                            <button class="pagination-btn" disabled>
+                    <nav class="flex justify-center mt-8">
+                        <div class="flex items-center gap-2">
+                            <button class="btn-md btn-outline-primary" disabled>
                                 <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                Précédent
                             </button>
-                            <button class="pagination-btn active">1</button>
-                            <button class="pagination-btn">2</button>
-                            <button class="pagination-btn">3</button>
-                            <span class="text-p4 text-dark-500">...</span>
-                            <button class="pagination-btn">10</button>
-                            <button class="pagination-btn">
+                            <button class="btn-md btn-primary">1</button>
+                            <button class="btn-md btn-outline-primary">2</button>
+                            <button class="btn-md btn-outline-primary">3</button>
+                            <span class="px-3 text-dark-500">...</span>
+                            <button class="btn-md btn-outline-primary">25</button>
+                            <button class="btn-md btn-outline-primary">
+                                Suivant
                                 <i data-lucide="chevron-right" class="w-4 h-4"></i>
                             </button>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
