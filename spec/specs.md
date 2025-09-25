@@ -54,16 +54,18 @@
 
 ## Liste des pages
 
-
 - Dashbord Admin et Boutique
   - Page de profil boutique (Liste des livre de la boutique)
   - Page d'ajout d'un livre
   - Page de modification d'un livre
+  
   - Page de gestion de la trésorerie
   - Page d'historique des ventes
   - Page de gestion du blog (Liste des articles)
   - Page d'ajout d'un article
   - Page de modification d'un article
+  
+  - Admin
   - Page de gestion des catégories
   - Page de validation des comptes boutiques
   - Page de validation des livres
